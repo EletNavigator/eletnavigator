@@ -15,6 +15,31 @@
     <link rel="apple-touch-icon" href="icon.png">
 
     <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <style>
+      #installBox {
+        margin: 30px auto;
+        text-align: center;
+        padding: 15px;
+      }
+
+      #installBtn {
+        display: none;
+        padding: 10px 18px;
+        border: none;
+        border-radius: 10px;
+        background: #7a3db8;
+        color: white;
+        font-size: 15px;
+        cursor: pointer;
+      }
+
+      #installHint {
+        font-size: 12px;
+        opacity: 0.6;
+        margin-top: 8px;
+      }
+    </style>
 </head>
 
 <body>
@@ -44,6 +69,17 @@
     <p>Egyszerű eszközök a tudatos mindennapokhoz.</p>
 </section>
 
+<!-- INSTALL BOX -->
+<div id="installBox">
+  <button id="installBtn">📲 Telepítés / App hozzáadása</button>
+
+  <p style="font-size:13px; opacity:0.75; margin-top:10px;">
+    Tedd ki a kezdőképernyődre, hogy 1 kattintással elérd az oldalt.
+  </p>
+
+  <div id="installHint"></div>
+</div>
+
 <script>
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
@@ -52,9 +88,38 @@ if ("serviceWorker" in navigator) {
     });
   });
 }
+
+// PWA install logika
+let deferredPrompt;
+const btn = document.getElementById("installBtn");
+const hint = document.getElementById("installHint");
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  btn.style.display = "inline-block";
+  hint.innerText = "1 kattintás és telepítheted appként.";
+
+  btn.onclick = async () => {
+    deferredPrompt.prompt();
+    const choice = await deferredPrompt.userChoice;
+    deferredPrompt = null;
+
+    if (choice.outcome === "accepted") {
+      hint.innerText = "Sikeres telepítés ✔";
+    }
+  };
+});
+
+setTimeout(() => {
+  if (!deferredPrompt) {
+    btn.style.display = "inline-block";
+    hint.innerText =
+      "iPhone: Safari → Megosztás → 'Kezdőképernyőhöz adás'";
+  }
+}, 1500);
 </script>
-
-
 
 <footer class="site-footer">
     <div class="footer-links">
@@ -65,7 +130,6 @@ if ("serviceWorker" in navigator) {
 
     <p class="footer-text">© ÉletNavigátor</p>
 </footer>
-
 
 </body>
 </html>

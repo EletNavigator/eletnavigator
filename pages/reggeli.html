@@ -2,40 +2,301 @@
 <html lang="hu">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Reggeli gondolathangolás</title>
+
   <link rel="stylesheet" href="../css/style.css">
+
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f6f2fb;
+      margin: 0;
+      color: #222;
+      text-align: center;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .logo-top img {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+    }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      font-size: 13px;
+      opacity: 0.6;
+      margin-top: 0;
+    }
+
+    .card {
+      max-width: 800px;
+      margin: 30px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+    }
+
+    .repeat {
+      font-size: 12px;
+      opacity: 0.6;
+      margin-bottom: 10px;
+    }
+
+    .breath-circle {
+      width: 120px;
+      height: 120px;
+      margin: 20px auto 30px auto;
+      border-radius: 50%;
+      background: #d9c7f3;
+      animation: breathe 6s infinite ease-in-out;
+    }
+
+    @keyframes breathe {
+      0%   { transform: scale(0.9); opacity: 0.5; }
+      50%  { transform: scale(1.25); opacity: 1; }
+      100% { transform: scale(0.9); opacity: 0.5; }
+    }
+
+    #mantra {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .breath {
+      font-size: 26px;
+      line-height: 1.8;
+      margin: 25px 0;
+      text-align: center;
+    }
+
+    .label {
+      font-weight: 600;
+      color: #7a3db8;
+      margin-bottom: 6px;
+    }
+
+    button {
+      display: block;
+      margin: 12px auto;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 10px;
+      background: #7a3db8;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    #doneText {
+      margin-top: 10px;
+      font-weight: 500;
+      color: green;
+    }
+
+    .hint {
+      opacity: 0.7;
+      margin-top: 20px;
+    }
+
+    .credit {
+      font-size: 11px;
+      opacity: 0.5;
+      margin: 30px 0 10px 0;
+    }
+
+    #returnMsg {
+      margin-top: 20px;
+      font-weight: 500;
+      opacity: 0.7;
+    }
+
+    .install-box {
+      margin-top: 25px;
+      padding: 15px;
+      border-radius: 12px;
+      background: #f3e8ff;
+    }
+
+    #installBtn {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .install-hint {
+      font-size: 12px;
+      opacity: 0.6;
+      margin-top: 8px;
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-
-<a href="../index.html" class="logo-top">
-    <img src="../icon.png" alt="ÉletNavigátor" class="header-icon">
+  <a href="../index.html" class="logo-top">
+    <img src="../icon.png" alt="ÉletNavigátor">
   </a>
 
-  <h1>🌿 Reggeli gondolathangolás</h1>
+  <h1>Reggeli gondolathangolás</h1>
+  <p class="subtitle">A nap első lélegzete. Minden nap új lélegző mondat.</p>
 </header>
 
-<section style="max-width: 700px; margin: 40px auto; padding: 40px; background: white; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+<section class="card">
 
-  <p><strong>Belégzés:</strong> Kapcsolódom a jelen pillanat erejéhez...</p>
+  <div class="repeat">Ismételd meg 3×. - Lélegezz lassan. - Kövesd a ritmust.</div>
 
-  <p><strong>Kilégzés:</strong> ...és tudatosan alakítom a napomat.</p>
+  <div class="breath-circle"></div>
+
+  <div id="mantra">Betöltés...</div>
+
+  <button onclick="toggleSound()">Hang</button>
+  <button onclick="markDone()">Ma elvégeztem</button>
+
+  <div id="doneText"></div>
+
+  <p class="hint">
+     
+  </p>
+
+  <p id="returnMsg"></p>
+
+  <div class="install-box">
+    <p>Tedd ki a kezdőképernyődre, hogy 1 kattintással elérd reggel.</p>
+
+    <button id="installBtn">📲 Telepítés / App hozzáadása</button>
+
+    <div id="installHint" class="install-hint"></div>
+  </div>
 
 </section>
 
-<footer class="site-footer">
-    <div class="footer-links">
-        <a href="/eletnavigator/pages/jogi-informaciok.html#impresszum">Impresszum</a>
-        <a href="/eletnavigator/pages/jogi-informaciok.html#adatvedelem">Adatvédelem</a>
-        <a href="/eletnavigator/pages/jogi-informaciok.html#suti">Süti tájékoztató</a>
-    </div>
+<audio id="bgSound" loop>
+  <source src="../sound/ambient.mp3" type="audio/mpeg">
+</audio>
 
-    <p class="footer-text">© ÉletNavigátor</p>
-</footer>
+<p class="credit">
+  Sound Effect by 
+  <a href="https://pixabay.com/users/dany_photo-42436275/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=319791">
+    Dany_photo
+  </a>
+  from Pixabay
+</p>
 
 
+<script>
+const mantrak = [
+  { belegzes: "Kapcsolódom a jelen pillanat erejéhez...", kilegzes: "...és tudatosan alakítom a napomat." },
+  { belegzes: "Nyugodtan érkezem ebbe a napba...", kilegzes: "...és elengedem a sietséget." },
+  { belegzes: "Figyelmem a jelenben van...", kilegzes: "...és minden légzéssel tisztulok." }
+];
+
+const now = new Date();
+const start = new Date(now.getFullYear(), 0, 0);
+const day = Math.floor((now - start) / (1000 * 60 * 60 * 24));
+
+const today = mantrak[day % mantrak.length];
+
+document.getElementById("mantra").innerHTML = `
+  <div class="breath">
+    <div class="label">Belégzés</div>
+    ${today.belegzes}
+  </div>
+
+  <div class="breath">
+    <div class="label">Kilégzés</div>
+    ${today.kilegzes}
+  </div>
+`;
+
+function toggleSound() {
+  const audio = document.getElementById("bgSound");
+
+  if (!audio.paused) {
+    audio.pause();
+    return;
+  }
+
+  audio.volume = 0;
+  audio.play();
+
+  let volume = 0;
+
+  const fadeIn = setInterval(() => {
+    volume += 0.02;
+    if (volume >= 1) {
+      volume = 1;
+      clearInterval(fadeIn);
+    }
+    audio.volume = volume;
+  }, 80);
+}
+
+function markDone() {
+  localStorage.setItem("doneToday", new Date().toDateString());
+  document.getElementById("doneText").innerText = "✔ Ma elvégezted.";
+}
+
+if (localStorage.getItem("doneToday") === new Date().toDateString()) {
+  document.getElementById("doneText").innerText = "✔ Ma már elvégezted. ";
+}
+
+const lastVisit = localStorage.getItem("lastVisit");
+const todayStr = new Date().toDateString();
+const msgEl = document.getElementById("returnMsg");
+
+msgEl.innerText =
+  lastVisit === todayStr
+    ? "Gyere vissza holnap is!"
+    : "Gyere vissza holnap is egy új gondolathangolásért.";
+
+localStorage.setItem("lastVisit", todayStr);
+
+let deferredPrompt;
+const btn = document.getElementById("installBtn");
+const hint = document.getElementById("installHint");
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  btn.style.display = "block";
+  hint.innerText = "1 kattintás és telepítheted appként.";
+
+  btn.onclick = async () => {
+    deferredPrompt.prompt();
+    const choice = await deferredPrompt.userChoice;
+    deferredPrompt = null;
+
+    if (choice.outcome === "accepted") {
+      hint.innerText = "Sikeres telepítés ✔";
+    }
+  };
+});
+
+setTimeout(() => {
+  if (!deferredPrompt) {
+    btn.style.display = "block";
+    hint.innerText =
+      "iPhone: Safari → Megosztás → 'Kezdőképernyőhöz adás'";
+  }
+}, 1500);
+</script>
 
 </body>
 </html>
