@@ -108,8 +108,9 @@ section {
     margin-bottom: 8px;
 }
 
-.header-icon {
-    width: 42px;
-    height: 42px;
+img.header-icon {
+    width: 42px !important;
+    height: 42px !important;
     border-radius: 50%;
+    object-fit: cover;
 }
