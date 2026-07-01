@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#f3e8ff">
 
-    <title>Életnavigátor</title>
+    <title>ÉletNavigátor</title>
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="manifest" href="manifest.json">
@@ -20,14 +20,21 @@
 <body>
 
 <header>
-    <h1>Életnavigátor</h1>
+
+<a href="../index.html" class="logo-top">
+    <img src="../icon.png" alt="ÉletNavigátor" class="header-icon">
+  </a>
+
+    <h1>ÉletNavigátor</h1>
     <p>Tudatos irány a mindennapokban</p>
 </header>
 
 <nav>
     <a href="pages/rolam.html">A mentorálásról</a>
     <a href="pages/modszereim.html">Módszereim</a>
-    <a href="pages/reggeli.html">Reggeli gondolathangolás</a>
+   <a href="pages/reggeli.html" class="nav-highlight">
+    Reggeli gondolathangolás
+</a>
     <a href="pages/program.html">Idő a léleknek program</a>
     <a href="pages/kapcsolat.html">Kapcsolat</a>
 </nav>
@@ -46,6 +53,19 @@ if ("serviceWorker" in navigator) {
   });
 }
 </script>
+
+
+
+<footer class="site-footer">
+    <div class="footer-links">
+        <a href="/pages/jogi-informaciok.html#impresszum">Impresszum</a>
+        <a href="/pages/jogi-informaciok.html#adatvedelem">Adatvédelem</a>
+        <a href="/pages/jogi-informaciok.html#suti">Süti tájékoztató</a>
+    </div>
+
+    <p class="footer-text">© ÉletNavigátor</p>
+</footer>
+
 
 </body>
 </html>

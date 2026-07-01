@@ -1,6 +1,6 @@
 {
-  "name": "Életnavigátor",
-  "short_name": "Életnavi",
+  "name": "ÉletNavigátor",
+  "short_name": "ÉletNavigátor",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

@@ -51,3 +51,65 @@ section {
   border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
+
+.site-footer {
+    margin-top: 60px;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #444;
+}
+
+.footer-links {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #ba46d9;
+    font-weight: 500;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-text {
+    font-size: 12px;
+    color: #777;
+}
+
+.nav-highlight {
+    position: relative;
+    padding-left: 34px;
+}
+
+.nav-highlight::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+
+    background-image: url("../icon.png");
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(0,0,0,0.15);
+}
+
+
+.logo-top {
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.header-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+}
