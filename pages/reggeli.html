@@ -109,20 +109,8 @@
       color: green;
     }
 
-    .hint {
-      opacity: 0.7;
-      margin-top: 20px;
-    }
-
-    .credit {
-      font-size: 11px;
-      opacity: 0.5;
-      margin: 30px 0 10px 0;
-    }
-
     #returnMsg {
       margin-top: 20px;
-      font-weight: 500;
       opacity: 0.7;
     }
 
@@ -133,14 +121,9 @@
       background: #f3e8ff;
     }
 
-    #installBtn {
-      display: none;
-      margin-top: 10px;
-    }
-
-    .install-hint {
+    #installHint {
       font-size: 12px;
-      opacity: 0.6;
+      opacity: 0.7;
       margin-top: 8px;
     }
   </style>
@@ -154,34 +137,36 @@
   </a>
 
   <h1>Reggeli gondolathangolás</h1>
-  <p class="subtitle">A nap első lélegzete. Minden nap új lélegző mondat.</p>
+  <p class="subtitle">A nap első lélegzete. Minden nap új mondat.</p>
 </header>
 
 <section class="card">
 
-  <div class="repeat">Ismételd meg 3×. - Lélegezz lassan. - Kövesd a ritmust.</div>
+  <div class="repeat">
+    Ismételd meg 3×. Lélegezz lassan. Kövesd a ritmust.
+  </div>
 
   <div class="breath-circle"></div>
 
   <div id="mantra">Betöltés...</div>
 
-  <button onclick="toggleSound()">Hang</button>
-  <button onclick="markDone()">Ma elvégeztem</button>
+  <button onclick="toggleSound()">🔊 Hang</button>
+  <button onclick="markDone()">✔ Ma elvégeztem</button>
 
   <div id="doneText"></div>
-
-  <p class="hint">
-     
-  </p>
 
   <p id="returnMsg"></p>
 
   <div class="install-box">
-    <p>Tedd ki a kezdőképernyődre, hogy 1 kattintással elérd reggel.</p>
+    <p>Tedd ki a telefonod kezdőképernyőjére,
+      hogy reggel könnyen elérhesd és elvégezhesd a gyakorlatot.
+    </p>
+    
 
-    <button id="installBtn">📲 Telepítés / App hozzáadása</button>
 
-    <div id="installHint" class="install-hint"></div>
+    <button onclick="location.href='../index.html#installBox'">
+      📲 Ugrás az install gombhoz
+    </button>
   </div>
 
 </section>
@@ -190,40 +175,129 @@
   <source src="../sound/ambient.mp3" type="audio/mpeg">
 </audio>
 
-<p class="credit">
-  Sound Effect by 
-  <a href="https://pixabay.com/users/dany_photo-42436275/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=319791">
-    Dany_photo
-  </a>
-  from Pixabay
-</p>
-
-
 <script>
+// ================= MANTRA =================
 const mantrak = [
-  { belegzes: "Kapcsolódom a jelen pillanat erejéhez...", kilegzes: "...és tudatosan alakítom a napomat." },
-  { belegzes: "Nyugodtan érkezem ebbe a napba...", kilegzes: "...és elengedem a sietséget." },
-  { belegzes: "Figyelmem a jelenben van...", kilegzes: "...és minden légzéssel tisztulok." }
+  { belégzés: "Kapcsolódom a jelen pillanat erejéhez...", kilégzés: "...és tudatosan alakítom a napomat." },
+  { belégzés: "Nyugodtan érkezem ebbe a napba...", kilégzés: "...és elengedem a sietséget." },
+  { belégzés: "Figyelmem a jelenben van...", kilégzés: "...és minden légzéssel tisztulok." },
+  { belégzés: "Figyelmem a jelenben van...", kilégzés: "...és minden légzéssel tisztulok." },
+  { belégzés: "Kapcsolódom a testemhez...", kilégzés: "...és megérzem a nyugalmat." },
+  { belégzés: "Most megérkezem önmagamhoz...", kilégzés: "...és elengedem a feszültséget." },
+  { belégzés: "A légzésem lelassul...", kilégzés: "...és a gondolataim elcsendesednek." },
+  { belégzés: "Nyugodtan figyelek befelé...", kilégzés: "...és elengedem a rohanást." },
+
+  { belégzés: "Biztonságban vagyok ebben a pillanatban...", kilégzés: "...és megnyugszik a testem." },
+  { belégzés: "Elfogadom a jelen pillanatot...", kilégzés: "...és nem küzdök ellene." },
+  { belégzés: "Minden belégzés erőt ad...", kilégzés: "...minden kilégzés elenged." },
+  { belégzés: "Jelen vagyok itt és most...", kilégzés: "...és ez elég nekem." },
+  { belégzés: "A figyelmem visszatér önmagamhoz...", kilégzés: "...és elengedem a külvilág zaját." },
+
+  { belégzés: "Megengedem magamnak a nyugalmat...", kilégzés: "...és elengedem a feszültséget." },
+  { belégzés: "Lassan visszatérek a jelenbe...", kilégzés: "...és megérzem a stabilitást." },
+  { belégzés: "Minden rendben van most...", kilégzés: "...és ezt el is fogadom." },
+  { belégzés: "A testem ellazul...", kilégzés: "...és a lelkem megnyugszik." },
+  { belégzés: "Nem kell sietnem...", kilégzés: "...csak jelen lenni." },
+
+  { belégzés: "Minden lélegzet tisztít...", kilégzés: "...és felszabadít." },
+  { belégzés: "Elengedem ami nem fontos...", kilégzés: "...és a lényegre figyelek." },
+  { belégzés: "A figyelmem tiszta és stabil...", kilégzés: "...és nem sodor el semmi." },
+  { belégzés: "Most megállok egy pillanatra...", kilégzés: "...és csak lélegzem." },
+  { belégzés: "Nyugalom van bennem...", kilégzés: "...és ez egyre mélyül." },
+
+  { belégzés: "Elfogadom amit érzek...", kilégzés: "...és hagyom továbbhaladni." },
+  { belégzés: "A jelen pillanat elegendő...", kilégzés: "...nem kell több." },
+  { belégzés: "Minden kilégzéssel könnyebb vagyok...", kilégzés: "...és szabadabb." },
+  { belégzés: "Befelé figyelek...", kilégzés: "...és elengedem a külső zajt." },
+  { belégzés: "Nyugalmat választok...", kilégzés: "...most és itt." },
+
+  { belégzés: "A légzésem stabilizál...", kilégzés: "...és megnyugtat." },
+  { belégzés: "Lassan visszatérek önmagamba...", kilégzés: "...és minden rendben van." },
+  { belégzés: "Jelen vagyok a testemben...", kilégzés: "...és biztonságban érzem magam." },
+  { belégzés: "Elengedem az elvárásokat...", kilégzés: "...és csak létezem." },
+  { belégzés: "Megérkezem a csendbe...", kilégzés: "...és ott megpihenek." },
+
+  { belégzés: "A gondolatok jönnek és mennek...", kilégzés: "...én csak figyelek." },
+  { belégzés: "Minden lélegzet visszahoz...", kilégzés: "...a jelen pillanatba." },
+  { belégzés: "Megengedem a lassúságot...", kilégzés: "...és nem sietek sehová." },
+  { belégzés: "A testem tudja az utat...", kilégzés: "...a nyugalom felé." },
+  { belégzés: "Most nem kell megoldanom semmit...", kilégzés: "...csak lélegezni." },
+
+  { belégzés: "Minden rendben van bennem...", kilégzés: "...és ez így van jól." },
+  { belégzés: "A figyelmem visszatér...", kilégzés: "...a belső csendhez." },
+  { belégzés: "Megengedem a jelenlétet...", kilégzés: "...és elengedem az ellenállást." },
+  { belégzés: "A légzésem mély és nyugodt...", kilégzés: "...és ez stabilizál." },
+  { belégzés: "Most nem kell semmit bizonyítanom...", kilégzés: "...csak lenni." },
+
+  { belégzés: "Nyugalom árad bennem...", kilégzés: "...és kitölti a testem." },
+  { belégzés: "Elengedem a feszültséget...", kilégzés: "...minden kilégzéssel." },
+  { belégzés: "A jelen pillanat megtart...", kilégzés: "...és biztonságot ad." },
+  { belégzés: "Figyelek a belső térre...", kilégzés: "...és megpihenek benne." },
+  { belégzés: "Most egyszerűen jelen vagyok...", kilégzés: "...és ez elég." },
+
+  { belégzés: "A légzésem ritmusa vezet...", kilégzés: "...és megnyugtat." },
+  { belégzés: "Nem kell kontrollálnom semmit...", kilégzés: "...csak engedni." },
+  { belégzés: "Minden pillanat új kezdet...", kilégzés: "...és én itt vagyok." },
+  { belégzés: "A testem ellazul mélyen...", kilégzés: "...és elenged mindent." },
+  { belégzés: "Figyelek és jelen vagyok...", kilégzés: "...és ez békét ad." },
+
+  { belégzés: "A csend bennem van...", kilégzés: "...és mindig elérhető." },
+  { belégzés: "Most nem kell semmit tenni...", kilégzés: "...csak lélegezni." },
+  { belégzés: "Elengedem a gondolatokat...", kilégzés: "...és visszatérek a légzéshez." },
+  { belégzés: "A jelen pillanat megtart...", kilégzés: "...és nem enged el." },
+  { belégzés: "Nyugalom van minden lélegzetben...", kilégzés: "...és én ezt érzem." },
+
+  { belégzés: "A figyelmem letisztul...", kilégzés: "...és békévé válik." },
+  { belégzés: "Nem kell sehová mennem...", kilégzés: "...már itt vagyok." },
+  { belégzés: "Minden kilégzés elengedés...", kilégzés: "...és felszabadulás." },
+  { belégzés: "Most megérkezem a jelenbe...", kilégzés: "...és ott maradok." },
+  { belégzés: "A légzésem stabil és mély...", kilégzés: "...és ez megnyugtat." }
+
 ];
 
 const now = new Date();
 const start = new Date(now.getFullYear(), 0, 0);
-const day = Math.floor((now - start) / (1000 * 60 * 60 * 24));
+const day = Math.floor((now - start) / 86400000);
 
 const today = mantrak[day % mantrak.length];
 
 document.getElementById("mantra").innerHTML = `
   <div class="breath">
     <div class="label">Belégzés</div>
-    ${today.belegzes}
+    ${today.belégzés}
   </div>
 
   <div class="breath">
     <div class="label">Kilégzés</div>
-    ${today.kilegzes}
+    ${today.kilégzés}
   </div>
 `;
 
+
+// ================= DONE =================
+function markDone() {
+  localStorage.setItem("doneToday", new Date().toDateString());
+  document.getElementById("doneText").innerText = "✔ Ma elvégezted.";
+}
+
+if (localStorage.getItem("doneToday") === new Date().toDateString()) {
+  document.getElementById("doneText").innerText = "✔ Ma már elvégezted.";
+}
+
+
+// ================= RETURN MSG =================
+const lastVisit = localStorage.getItem("lastVisit");
+const todayStr = new Date().toDateString();
+
+document.getElementById("returnMsg").innerText =
+  lastVisit === todayStr
+    ? "Gyere vissza holnap is!"
+    : "Gyere vissza holnap is egy új gondolathangolásért.";
+
+localStorage.setItem("lastVisit", todayStr);
+
+
+// ================= SOUND =================
 function toggleSound() {
   const audio = document.getElementById("bgSound");
 
@@ -247,55 +321,6 @@ function toggleSound() {
   }, 80);
 }
 
-function markDone() {
-  localStorage.setItem("doneToday", new Date().toDateString());
-  document.getElementById("doneText").innerText = "✔ Ma elvégezted.";
-}
-
-if (localStorage.getItem("doneToday") === new Date().toDateString()) {
-  document.getElementById("doneText").innerText = "✔ Ma már elvégezted. ";
-}
-
-const lastVisit = localStorage.getItem("lastVisit");
-const todayStr = new Date().toDateString();
-const msgEl = document.getElementById("returnMsg");
-
-msgEl.innerText =
-  lastVisit === todayStr
-    ? "Gyere vissza holnap is!"
-    : "Gyere vissza holnap is egy új gondolathangolásért.";
-
-localStorage.setItem("lastVisit", todayStr);
-
-let deferredPrompt;
-const btn = document.getElementById("installBtn");
-const hint = document.getElementById("installHint");
-
-window.addEventListener("beforeinstallprompt", (e) => {
-  e.preventDefault();
-  deferredPrompt = e;
-
-  btn.style.display = "block";
-  hint.innerText = "1 kattintás és telepítheted appként.";
-
-  btn.onclick = async () => {
-    deferredPrompt.prompt();
-    const choice = await deferredPrompt.userChoice;
-    deferredPrompt = null;
-
-    if (choice.outcome === "accepted") {
-      hint.innerText = "Sikeres telepítés ✔";
-    }
-  };
-});
-
-setTimeout(() => {
-  if (!deferredPrompt) {
-    btn.style.display = "block";
-    hint.innerText =
-      "iPhone: Safari → Megosztás → 'Kezdőképernyőhöz adás'";
-  }
-}, 1500);
 </script>
 
 </body>
