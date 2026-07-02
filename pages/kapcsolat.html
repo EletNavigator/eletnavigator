@@ -1,73 +1,182 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-  <meta charset="UTF-8">
-  <title>Kapcsolat</title>
-  <link rel="stylesheet" href="../css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kapcsolat</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+
+body{
+    font-family:system-ui,sans-serif;
+    background:#f6f2fb;
+    margin:0;
+    color:#222;
+}
+
+header{
+    text-align:center;
+    padding:25px 20px 10px;
+}
+
+.header-icon{
+    width:56px;
+    height:56px;
+    border-radius:50%;
+}
+
+h1{
+    font-size:30px;
+    font-weight:500;
+    margin-top:15px;
+    margin-bottom:10px;
+}
+
+section{
+    max-width:750px;
+    margin:25px auto;
+    background:#fff;
+    border-radius:18px;
+    padding:30px 24px;
+    box-shadow:0 6px 25px rgba(0,0,0,.08);
+}
+
+section p{
+    font-size:20px;
+    line-height:1.8;
+    margin:18px 0;
+}
+
+ul{
+    font-size:20px;
+    line-height:2;
+    padding-left:28px;
+}
+
+.email-btn{
+    display:inline-block;
+    margin:15px 0;
+    padding:16px 28px;
+    background:#7a3db8;
+    color:#fff;
+    text-decoration:none;
+    border-radius:12px;
+    font-size:20px;
+    font-weight:600;
+}
+
+.email-btn:hover{
+    background:#6a31a7;
+}
+
+.site-footer{
+    text-align:center;
+    margin:40px 20px 25px;
+}
+
+.footer-links{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:18px;
+}
+
+.footer-links a{
+    text-decoration:none;
+    color:#7a3db8;
+    font-size:16px;
+}
+
+.footer-text{
+    margin-top:18px;
+    font-size:14px;
+    opacity:.7;
+}
+
+@media (max-width:600px){
+
+    h1{
+        font-size:26px;
+    }
+
+    section{
+        margin:15px;
+        padding:24px 20px;
+    }
+
+    section p,
+    ul{
+        font-size:18px;
+    }
+
+    .email-btn{
+        width:100%;
+        box-sizing:border-box;
+        text-align:center;
+        font-size:19px;
+    }
+
+}
+
+</style>
+
 </head>
+
 <body>
 
 <header>
 
 <a href="../index.html" class="logo-top">
-    <img src="../icon.png" alt="ÉletNavigátor" class="header-icon">
-  </a>
+<img src="../icon.png" alt="ÉletNavigátor" class="header-icon">
+</a>
 
-  <h1>Kapcsolat és konzultációs jelentkezés</h1>
+<h1>Kapcsolat és konzultációs jelentkezés</h1>
+
 </header>
 
 <section>
 
-  <p>
-    Ha kérdésed van, vagy szeretnél online konzultációra jelentkezni,
-    írj bizalommal.
-    </p>
+<p>
+Ha kérdésed van, vagy szeretnél online konzultációra jelentkezni, írj bizalommal.
+</p>
 
-  <p>
-    <strong>Kérlek az emaiben add meg:</strong>
-  </p>
+<p><strong>Kérlek az e-mailedben add meg:</strong></p>
 
-  <ul>
-    <li>👤 Neved</li>
-    <li>✉️ E-mail címed</li>
-    <li>📞 Telefonszámod</li>
-  </ul>
+<ul>
+<li>👤 Neved</li>
+<li>✉️ E-mail címed</li>
+<li>📞 Telefonszámod, ha szeretnél élő szóban beszélni. (Ez gyorsabb megoldás néha.)</li>
+</ul>
 
-  <p style="margin: 20px 0;">
-    <a href="mailto:eletnavigator.kapcsolat@gmail.com"
-       style="
-         display:inline-block;
-         padding:10px 18px;
-         background:#ba46d9;
-         color:white;
-         text-decoration:none;
-         border-radius:8px;
-         font-weight:bold;
-       ">
-       📧 Email írása
-    </a>
-  </p>
+<p style="text-align:center;">
+<a class="email-btn" href="mailto:eletnavigator.kapcsolat@gmail.com">
+📧 E-mail írása
+</a>
+</p>
 
-  <p>
-    Az emailed beérkezése után felveszem veled a kapcsolatot.
-  </p>
+<p>
+Az e-mailed beérkezése után felveszem veled a kapcsolatot.
+</p>
 
-  <p>
-    <strong>Válaszidő:</strong> általában 1–2 munkanap.
-  </p>
+<p>
+<strong>Válaszidő:</strong> általában 1–2 munkanap.
+</p>
 
 </section>
 
 <footer class="site-footer">
-    <div class="footer-links">
-        <a href="/eletnavigator/pages/jogi-informaciok.html#impresszum">Impresszum</a>
-        <a href="/eletnavigator/pages/jogi-informaciok.html#adatvedelem">Adatvédelem</a>
-        <a href="/eletnavigator/pages/jogi-informaciok.html#suti">Süti tájékoztató</a>
-    </div>
 
-    <p class="footer-text">© ÉletNavigátor</p>
+<div class="footer-links">
+<a href="/eletnavigator/pages/jogi-informaciok.html#impresszum">Impresszum</a>
+<a href="/eletnavigator/pages/jogi-informaciok.html#adatvedelem">Adatvédelem</a>
+<a href="/eletnavigator/pages/jogi-informaciok.html#suti">Süti tájékoztató</a>
+</div>
+
+<p class="footer-text">© ÉletNavigátor</p>
+
 </footer>
-
 
 </body>
 </html>

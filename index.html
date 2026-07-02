@@ -74,7 +74,7 @@
   <button id="installBtn">📲 Telepítés / App hozzáadása</button>
 
   <p style="font-size:13px; opacity:0.75; margin-top:10px;">
-    Tedd ki a kezdőképernyődre, hogy 1 kattintással elérd az oldalt.
+    Tedd ki a kezdőképernyődre és 1 kattintással eléred az oldalt.
   </p>
 
   <div id="installHint"></div>
@@ -115,8 +115,13 @@ window.addEventListener("beforeinstallprompt", (e) => {
 setTimeout(() => {
   if (!deferredPrompt) {
     btn.style.display = "inline-block";
-    hint.innerText =
-      "iPhone: Safari → Megosztás → 'Kezdőképernyőhöz adás'";
+    hint.innerHTML = `
+      📱 <strong>Android (Chrome):</strong> Használd a fenti <strong>Telepítés</strong> gombot.<br><br>
+
+      🌐 <strong>Android (DuckDuckGo, Firefox, Opera stb.):</strong> Nyisd meg a böngésző menüjét, majd válaszd a <strong>Hozzáadás a kezdőképernyőhöz</strong> lehetőséget, ha elérhető.<br><br>
+
+      🍎 <strong>iPhone (Safari):</strong> Koppints a <strong>Megosztás</strong> gombra, majd válaszd a <strong>Kezdőképernyőhöz adás</strong> lehetőséget.
+    `;
   }
 }, 1500);
 </script>
