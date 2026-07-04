@@ -188,3 +188,22 @@ img.header-icon {
 .content-page li{
     margin-bottom:10px;
 }
+
+.method-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 22px;
+    margin-bottom: 18px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.method-card h3 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.method-card p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
