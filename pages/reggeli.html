@@ -103,12 +103,6 @@
       transform: scale(0.98);
     }
 
-    #doneText {
-      margin-top: 10px;
-      font-weight: 500;
-      color: green;
-    }
-
     #returnMsg {
       margin-top: 20px;
       opacity: 0.7;
@@ -119,12 +113,6 @@
       padding: 15px;
       border-radius: 12px;
       background: #f3e8ff;
-    }
-
-    #installHint {
-      font-size: 12px;
-      opacity: 0.7;
-      margin-top: 8px;
     }
   </style>
 </head>
@@ -151,21 +139,14 @@
   <div id="mantra">Betöltés...</div>
 
   <button onclick="toggleSound()">🔊 Hang</button>
-  <button onclick="markDone()">✔ Ma elvégeztem</button>
-
-  <div id="doneText"></div>
 
   <p id="returnMsg"></p>
 
   <div class="install-box">
-    <p>Tedd ki a telefonod kezdőképernyőjére,
-      hogy reggel könnyen elérhesd és elvégezhesd a gyakorlatot.
-    </p>
-    
-
+    <p>Tedd ki a telefonod kezdőképernyőjére, hogy reggel könnyen elérhesd.</p>
 
     <button onclick="location.href='../index.html#installBox'">
-      📲 Ugrás a 'Telepítés' gombhoz
+      📲 Ugrás a Telepítéshez
     </button>
   </div>
 
@@ -176,90 +157,268 @@
 </audio>
 
 <script>
-// ================= MANTRA =================
+
+// ================= MANTRA LISTA =================
+// ide jön majd a 365 végleges mantra
 const mantrak = [
-  { belégzés: "Kapcsolódom a jelen pillanat erejéhez...", kilégzés: "...és tudatosan alakítom a napomat." },
-  { belégzés: "Nyugodtan érkezem ebbe a napba...", kilégzés: "...és elengedem a sietséget." },
-  { belégzés: "Figyelmem a jelenben van...", kilégzés: "...és minden légzéssel tisztulok." },
-  { belégzés: "Figyelmem a jelenben van...", kilégzés: "...és minden légzéssel tisztulok." },
-  { belégzés: "Kapcsolódom a testemhez...", kilégzés: "...és megérzem a nyugalmat." },
-  { belégzés: "Most megérkezem önmagamhoz...", kilégzés: "...és elengedem a feszültséget." },
-  { belégzés: "A légzésem lelassul...", kilégzés: "...és a gondolataim elcsendesednek." },
-  { belégzés: "Nyugodtan figyelek befelé...", kilégzés: "...és elengedem a rohanást." },
+  // ================= 1–140 =================
 
-  { belégzés: "Biztonságban vagyok ebben a pillanatban...", kilégzés: "...és megnyugszik a testem." },
-  { belégzés: "Elfogadom a jelen pillanatot...", kilégzés: "...és nem küzdök ellene." },
-  { belégzés: "Minden belégzés erőt ad...", kilégzés: "...minden kilégzés elenged." },
-  { belégzés: "Jelen vagyok itt és most...", kilégzés: "...és ez elég nekem." },
-  { belégzés: "A figyelmem visszatér önmagamhoz...", kilégzés: "...és elengedem a külvilág zaját." },
+{ belégzés: "Megérkezem a jelenbe", kilégzés: "és elengedem a múlt zaját." },
+{ belégzés: "Tudatosan figyelek", kilégzés: "és elcsendesedik bennem minden." },
+{ belégzés: "Kapcsolódom a légzésemhez", kilégzés: "és visszatérek önmagamhoz." },
+{ belégzés: "Érzem a testem nyugalmát", kilégzés: "és elengedem a feszültséget." },
+{ belégzés: "Nyitott vagyok a napra", kilégzés: "és bízom az élet ritmusában." },
+{ belégzés: "Figyelmem tiszta és jelenlévő", kilégzés: "és nem ragadok gondolatokba." },
+{ belégzés: "Kapcsolódom a belső csendhez", kilégzés: "és megpihen az elmém." },
+{ belégzés: "Érzem a stabilitást magamban", kilégzés: "és biztonságban vagyok." },
+{ belégzés: "Elfogadom a pillanatot", kilégzés: "és megnyugszik bennem minden." },
+{ belégzés: "Tudatosan jelen vagyok", kilégzés: "és elengedem az ellenállást." },
 
-  { belégzés: "Megengedem magamnak a nyugalmat...", kilégzés: "...és elengedem a feszültséget." },
-  { belégzés: "Lassan visszatérek a jelenbe...", kilégzés: "...és megérzem a stabilitást." },
-  { belégzés: "Minden rendben van most...", kilégzés: "...és ezt el is fogadom." },
-  { belégzés: "A testem ellazul...", kilégzés: "...és a lelkem megnyugszik." },
-  { belégzés: "Nem kell sietnem...", kilégzés: "...csak jelen lenni." },
+{ belégzés: "Kapcsolódom a belső erőmhöz", kilégzés: "és bízom önmagamban." },
+{ belégzés: "Érzem a belső békét", kilégzés: "és elcsendesedik a világ bennem." },
+{ belégzés: "Megengedem a lassulást", kilégzés: "és nem kell sietnem." },
+{ belégzés: "Figyelem a gondolataimat", kilégzés: "és nem azonosulok velük." },
+{ belégzés: "Nyugodtan lélegzem", kilégzés: "és megnyugszik az idegrendszerem." },
+{ belégzés: "Kapcsolódom a jelenhez", kilégzés: "és itt vagyok teljesen." },
+{ belégzés: "Érzem a testem jelzéseit", kilégzés: "és tiszteletben tartom őket." },
+{ belégzés: "Bízom az élet folyamatában", kilégzés: "és elengedem az irányítást." },
+{ belégzés: "Elfogadom önmagam", kilégzés: "és elengedem az önkritikát." },
+{ belégzés: "Kapcsolódom a csendhez", kilégzés: "és kitisztul az elmém." },
 
-  { belégzés: "Minden lélegzet tisztít...", kilégzés: "...és felszabadít." },
-  { belégzés: "Elengedem ami nem fontos...", kilégzés: "...és a lényegre figyelek." },
-  { belégzés: "A figyelmem tiszta és stabil...", kilégzés: "...és nem sodor el semmi." },
-  { belégzés: "Most megállok egy pillanatra...", kilégzés: "...és csak lélegzem." },
-  { belégzés: "Nyugalom van bennem...", kilégzés: "...és ez egyre mélyül." },
+{ belégzés: "Érzem a jelen erejét", kilégzés: "és teljesen itt vagyok." },
+{ belégzés: "Tudatosan figyelek a légzésemre", kilégzés: "és megnyugszom." },
+{ belégzés: "Kapcsolódom a stabilitásomhoz", kilégzés: "és elengedem a félelmet." },
+{ belégzés: "Figyelek a belső hangomra", kilégzés: "és meghallom önmagam." },
+{ belégzés: "Nyitott vagyok az élet áramlására", kilégzés: "és nem állok ellen." },
+{ belégzés: "Érzem a nyugalmat magamban", kilégzés: "és elengedem a feszültséget." },
+{ belégzés: "Kapcsolódom a belső békémhez", kilégzés: "és megpihenek benne." },
+{ belégzés: "Tudatos jelenlétben vagyok", kilégzés: "és nem sodornak el a gondolatok." },
+{ belégzés: "Elfogadom ami van", kilégzés: "és békében vagyok vele." },
+{ belégzés: "Megérkezem önmagamhoz", kilégzés: "és itt vagyok most." },
 
-  { belégzés: "Elfogadom amit érzek...", kilégzés: "...és hagyom továbbhaladni." },
-  { belégzés: "A jelen pillanat elegendő...", kilégzés: "...nem kell több." },
-  { belégzés: "Minden kilégzéssel könnyebb vagyok...", kilégzés: "...és szabadabb." },
-  { belégzés: "Befelé figyelek...", kilégzés: "...és elengedem a külső zajt." },
-  { belégzés: "Nyugalmat választok...", kilégzés: "...most és itt." },
+{ belégzés: "Érzem a testem erejét", kilégzés: "és földelt vagyok." },
+{ belégzés: "Kapcsolódom a belső csendhez", kilégzés: "és elcsendesedik minden." },
+{ belégzés: "Figyelek a jelen pillanatra", kilégzés: "és nem ragadok el." },
+{ belégzés: "Tudatosan lélegzem", kilégzés: "és visszatérek a testembe." },
+{ belégzés: "Nyitott vagyok a változásra", kilégzés: "és rugalmasan haladok." },
+{ belégzés: "Érzem a belső egyensúlyt", kilégzés: "és stabilan jelen vagyok." },
+{ belégzés: "Kapcsolódom a jelenhez", kilégzés: "és elengedem a múlt zaját." },
+{ belégzés: "Figyelmem tiszta és fókuszált", kilégzés: "és nem kalandozom el." },
+{ belégzés: "Érzem az életet minden lélegzetben", kilégzés: "és hálát érzek." },
+{ belégzés: "Bízom magamban", kilégzés: "és elengedem a kételyeket." },
 
-  { belégzés: "A légzésem stabilizál...", kilégzés: "...és megnyugtat." },
-  { belégzés: "Lassan visszatérek önmagamba...", kilégzés: "...és minden rendben van." },
-  { belégzés: "Jelen vagyok a testemben...", kilégzés: "...és biztonságban érzem magam." },
-  { belégzés: "Elengedem az elvárásokat...", kilégzés: "...és csak létezem." },
-  { belégzés: "Megérkezem a csendbe...", kilégzés: "...és ott megpihenek." },
+{ belégzés: "Megengedem az érzéseimet", kilégzés: "és teret adok nekik." },
+{ belégzés: "Kapcsolódom a belső nyugalomhoz", kilégzés: "és kisimul bennem minden." },
+{ belégzés: "Érzem a stabil alapot", kilégzés: "és megpihenek benne." },
+{ belégzés: "Tudatosan figyelek", kilégzés: "és nem reagálok automatikusan." },
+{ belégzés: "Nyitott vagyok a jelenre", kilégzés: "és elengedem a múltat." },
+{ belégzés: "Kapcsolódom a csendhez", kilégzés: "és elcsendesedik az elme." },
+{ belégzés: "Érzem a belső békét", kilégzés: "és megpihen bennem minden." },
+{ belégzés: "Figyelem a légzésem", kilégzés: "és visszatérek önmagamhoz." },
+{ belégzés: "Elfogadom a változást", kilégzés: "és rugalmas maradok." },
+{ belégzés: "Kapcsolódom a jelenhez", kilégzés: "és biztonságban vagyok." },
 
-  { belégzés: "A gondolatok jönnek és mennek...", kilégzés: "...én csak figyelek." },
-  { belégzés: "Minden lélegzet visszahoz...", kilégzés: "...a jelen pillanatba." },
-  { belégzés: "Megengedem a lassúságot...", kilégzés: "...és nem sietek sehová." },
-  { belégzés: "A testem tudja az utat...", kilégzés: "...a nyugalom felé." },
-  { belégzés: "Most nem kell megoldanom semmit...", kilégzés: "...csak lélegezni." },
+{ belégzés: "Tudatosan jelen vagyok", kilégzés: "és elengedem a sürgetést." },
+{ belégzés: "Érzem a belső csendet", kilégzés: "és megnyugszik az elmém." },
+{ belégzés: "Kapcsolódom a belső erőhöz", kilégzés: "és stabil vagyok magamban." },
+{ belégzés: "Figyelek a testemre", kilégzés: "és tisztelem a határaimat." },
+{ belégzés: "Nyugodtan vagyok jelen", kilégzés: "és elengedem a feszültséget." },
+{ belégzés: "Bízom a folyamatban", kilégzés: "és nem akarok mindent irányítani." },
+{ belégzés: "Érzem a jelen erejét", kilégzés: "és teljes figyelemmel vagyok itt." },
+{ belégzés: "Kapcsolódom a légzésemhez", kilégzés: "és lelassulok." },
+{ belégzés: "Elfogadom önmagam", kilégzés: "és elengedem az összehasonlítást." },
+{ belégzés: "Érzem a nyugalmat", kilégzés: "és elcsendesedik bennem minden." },
 
-  { belégzés: "Minden rendben van bennem...", kilégzés: "...és ez így van jól." },
-  { belégzés: "A figyelmem visszatér...", kilégzés: "...a belső csendhez." },
-  { belégzés: "Megengedem a jelenlétet...", kilégzés: "...és elengedem az ellenállást." },
-  { belégzés: "A légzésem mély és nyugodt...", kilégzés: "...és ez stabilizál." },
-  { belégzés: "Most nem kell semmit bizonyítanom...", kilégzés: "...csak lenni." },
+{ belégzés: "Megengedem a pihenést", kilégzés: "és elengedem a bűntudatot." },
+{ belégzés: "Kapcsolódom a jelenhez", kilégzés: "és elengedem a múltat." },
+{ belégzés: "Tudatosan figyelek", kilégzés: "és visszatérek a testembe." },
+{ belégzés: "Érzem a stabilitást", kilégzés: "és biztonságban vagyok." },
+{ belégzés: "Nyitott vagyok az életre", kilégzés: "és elfogadom ami van." },
+{ belégzés: "Figyelek a gondolataimra", kilégzés: "és nem ragadok beléjük." },
+{ belégzés: "Kapcsolódom a csendhez", kilégzés: "és elcsendesedik minden." },
+{ belégzés: "Érzem az élet áramlását", kilégzés: "és együtt haladok vele." },
+{ belégzés: "Tudatos jelenlétben vagyok", kilégzés: "és békében vagyok." },
+{ belégzés: "Megérkezem a jelenbe", kilégzés: "és itt vagyok teljesen." },
+// ================= 141–280 =================
 
-  { belégzés: "Nyugalom árad bennem...", kilégzés: "...és kitölti a testem." },
-  { belégzés: "Elengedem a feszültséget...", kilégzés: "...minden kilégzéssel." },
-  { belégzés: "A jelen pillanat megtart...", kilégzés: "...és biztonságot ad." },
-  { belégzés: "Figyelek a belső térre...", kilégzés: "...és megpihenek benne." },
-  { belégzés: "Most egyszerűen jelen vagyok...", kilégzés: "...és ez elég." },
+{ belégzés: "Kapcsolódom a belső nyugalomhoz", kilégzés: "és elcsendesedik bennem minden." },
+{ belégzés: "Érzem a stabilitást magamban", kilégzés: "és nem ingatnak meg a külső dolgok." },
+{ belégzés: "Tudatosan figyelek a jelenre", kilégzés: "és elengedem a múlt súlyát." },
+{ belégzés: "Nyitott vagyok a változásra", kilégzés: "és rugalmasan haladok az áramlással." },
+{ belégzés: "Kapcsolódom a légzésemhez", kilégzés: "és visszatérek a belső középpontomba." },
+{ belégzés: "Érzem a belső békét", kilégzés: "és minden kisimul bennem." },
+{ belégzés: "Figyelmem tiszta és nyugodt", kilégzés: "és nem ragadok gondolatokba." },
+{ belégzés: "Elfogadom a pillanatot", kilégzés: "és békében vagyok vele." },
+{ belégzés: "Kapcsolódom a belső erőmhöz", kilégzés: "és stabilan állok önmagamban." },
+{ belégzés: "Tudatosan jelen vagyok", kilégzés: "és nem sürgetek semmit." },
 
-  { belégzés: "A légzésem ritmusa vezet...", kilégzés: "...és megnyugtat." },
-  { belégzés: "Nem kell kontrollálnom semmit...", kilégzés: "...csak engedni." },
-  { belégzés: "Minden pillanat új kezdet...", kilégzés: "...és én itt vagyok." },
-  { belégzés: "A testem ellazul mélyen...", kilégzés: "...és elenged mindent." },
-  { belégzés: "Figyelek és jelen vagyok...", kilégzés: "...és ez békét ad." },
+{ belégzés: "Érzem a testem jelzéseit", kilégzés: "és figyelemmel fordulok feléjük." },
+{ belégzés: "Megengedem a lassulást", kilégzés: "és nem kell teljesítenem most." },
+{ belégzés: "Kapcsolódom a csendhez", kilégzés: "és elcsendesedik az elmém." },
+{ belégzés: "Nyugodtan lélegzem", kilégzés: "és megpihen az idegrendszerem." },
+{ belégzés: "Érzem a jelen erejét", kilégzés: "és teljesen itt vagyok." },
+{ belégzés: "Bízom az élet folyamatában", kilégzés: "és elengedem az irányítást." },
+{ belégzés: "Figyelek a gondolataimra", kilégzés: "és hagyom őket továbblépni." },
+{ belégzés: "Kapcsolódom a belső csendhez", kilégzés: "és kitisztul minden bennem." },
+{ belégzés: "Érzem a stabil alapot", kilégzés: "és biztonságban vagyok." },
+{ belégzés: "Elfogadom önmagam", kilégzés: "és elengedem az ítélkezést." },
 
-  { belégzés: "A csend bennem van...", kilégzés: "...és mindig elérhető." },
-  { belégzés: "Most nem kell semmit tenni...", kilégzés: "...csak lélegezni." },
-  { belégzés: "Elengedem a gondolatokat...", kilégzés: "...és visszatérek a légzéshez." },
-  { belégzés: "A jelen pillanat megtart...", kilégzés: "...és nem enged el." },
-  { belégzés: "Nyugalom van minden lélegzetben...", kilégzés: "...és én ezt érzem." },
+{ belégzés: "Kapcsolódom a jelenhez", kilégzés: "és elengedem a múltat." },
+{ belégzés: "Tudatosan figyelek", kilégzés: "és visszatérek a testembe." },
+{ belégzés: "Érzem a nyugalmat", kilégzés: "és elcsendesedik bennem minden." },
+{ belégzés: "Figyelem a légzésemet", kilégzés: "és megnyugszik az elmém." },
+{ belégzés: "Nyitott vagyok a napra", kilégzés: "és bízom a saját ritmusomban." },
+{ belégzés: "Kapcsolódom a belső békémhez", kilégzés: "és megpihenek benne." },
+{ belégzés: "Érzem az élet áramlását", kilégzés: "és együtt haladok vele." },
+{ belégzés: "Tudatos jelenlétben vagyok", kilégzés: "és elengedem a zavaró zajokat." },
+{ belégzés: "Figyelek a belső hangomra", kilégzés: "és meghallom önmagam." },
+{ belégzés: "Érzem a belső egyensúlyt", kilégzés: "és stabil vagyok." },
 
-  { belégzés: "A figyelmem letisztul...", kilégzés: "...és békévé válik." },
-  { belégzés: "Nem kell sehová mennem...", kilégzés: "...már itt vagyok." },
-  { belégzés: "Minden kilégzés elengedés...", kilégzés: "...és felszabadulás." },
-  { belégzés: "Most megérkezem a jelenbe...", kilégzés: "...és ott maradok." },
-  { belégzés: "A légzésem stabil és mély...", kilégzés: "...és ez megnyugtat." }
+{ belégzés: "Kapcsolódom a stabilitásomhoz", kilégzés: "és elengedem a félelmet." },
+{ belégzés: "Nyugodtan szemlélem a napomat", kilégzés: "és nem reagálok automatikusan." },
+{ belégzés: "Megengedem az érzéseimet", kilégzés: "és teret adok nekik." },
+{ belégzés: "Tudatosan figyelek a jelenre", kilégzés: "és nem ragadok el." },
+{ belégzés: "Érzem a testem erejét", kilégzés: "és földelt vagyok." },
+{ belégzés: "Kapcsolódom a csendhez", kilégzés: "és elcsendesedik minden." },
+{ belégzés: "Figyelmem tiszta és fókuszált", kilégzés: "és nem kalandozom el." },
+{ belégzés: "Bízom magamban", kilégzés: "és elengedem a kételyeket." },
+{ belégzés: "Elfogadom a változást", kilégzés: "és rugalmas maradok." },
+{ belégzés: "Kapcsolódom a jelenhez", kilégzés: "és biztonságban vagyok." },
+
+{ belégzés: "Érzem a belső csendet", kilégzés: "és megpihen az elmém." },
+{ belégzés: "Tudatosan lélegzem", kilégzés: "és visszatérek önmagamhoz." },
+{ belégzés: "Figyelek a gondolataimra", kilégzés: "és nem azonosulok velük." },
+{ belégzés: "Kapcsolódom a belső erőhöz", kilégzés: "és stabil vagyok magamban." },
+{ belégzés: "Nyitott vagyok az életre", kilégzés: "és elengedem az ellenállást." },
+{ belégzés: "Érzem a nyugalmat magamban", kilégzés: "és elengedem a feszültséget." },
+{ belégzés: "Kapcsolódom a légzésemhez", kilégzés: "és lelassulok." },
+{ belégzés: "Elfogadom a pillanatot", kilégzés: "és nincs ellenállás bennem." },
+{ belégzés: "Tudatosan jelen vagyok", kilégzés: "és elengedem a sürgetést." },
+{ belégzés: "Érzem a stabilitást", kilégzés: "és megnyugszom." },
+
+{ belégzés: "Kapcsolódom a belső nyugalomhoz", kilégzés: "és kisimul bennem minden." },
+{ belégzés: "Figyelek a testemre", kilégzés: "és tisztelem a határaimat." },
+{ belégzés: "Érzem a jelen erejét", kilégzés: "és teljes figyelemmel vagyok itt." },
+{ belégzés: "Nyugodtan vagyok jelen", kilégzés: "és elengedem a feszültséget." },
+{ belégzés: "Kapcsolódom a csendhez", kilégzés: "és megpihen az elmém." },
+{ belégzés: "Tudatos jelenlétben vagyok", kilégzés: "és nem sodornak el a gondolatok." },
+{ belégzés: "Érzem a belső békét", kilégzés: "és elcsendesedik minden bennem." },
+{ belégzés: "Megengedem a lassulást", kilégzés: "és nem kell sietnem." },
+{ belégzés: "Kapcsolódom a stabilitásomhoz", kilégzés: "és biztonságban vagyok." },
+{ belégzés: "Elfogadom önmagam", kilégzés: "és elengedem az összehasonlítást." },
+
+{ belégzés: "Figyelem a légzésem", kilégzés: "és visszatérek a jelenbe." },
+{ belégzés: "Érzem a testem nyugalmát", kilégzés: "és elengedem a feszültséget." },
+{ belégzés: "Kapcsolódom a jelenhez", kilégzés: "és elengedem a múlt zaját." },
+{ belégzés: "Tudatosan figyelek", kilégzés: "és nem reagálok automatikusan." },
+{ belégzés: "Nyitott vagyok a változásra", kilégzés: "és rugalmasan haladok." },
+{ belégzés: "Érzem a belső egyensúlyt", kilégzés: "és stabilan jelen vagyok." },
+{ belégzés: "Kapcsolódom a csendhez", kilégzés: "és elcsendesedik az elme." },
+{ belégzés: "Figyelek a jelen pillanatra", kilégzés: "és nem ragadok el." },
+{ belégzés: "Tudatosan lélegzem", kilégzés: "és megnyugszom." },
+{ belégzés: "Érzem az élet áramlását", kilégzés: "és együtt haladok vele." },
+// ================= 281–400 =================
+
+{ belégzés: "Kapcsolódom a jelenhez", kilégzés: "és megérkezem önmagamba." },
+{ belégzés: "Érzem a belső csendet", kilégzés: "és minden elcsendesedik bennem." },
+{ belégzés: "Tudatosan figyelek a légzésemre", kilégzés: "és elengedem a gondolatok zaját." },
+{ belégzés: "Nyitott vagyok a pillanatra", kilégzés: "és elfogadom ami van." },
+{ belégzés: "Kapcsolódom a stabilitásomhoz", kilégzés: "és biztonságban vagyok önmagammal." },
+{ belégzés: "Érzem a testem jelenlétét", kilégzés: "és megpihenek benne." },
+{ belégzés: "Figyelmem tiszta és nyugodt", kilégzés: "és nem sodor el semmi." },
+{ belégzés: "Kapcsolódom a belső erőmhöz", kilégzés: "és bízom a saját utamban." },
+{ belégzés: "Érzem a nyugalmat magamban", kilégzés: "és elengedem a feszültséget." },
+{ belégzés: "Tudatos jelenlétben vagyok", kilégzés: "és itt vagyok teljesen." },
+
+{ belégzés: "Megengedem a lassulást", kilégzés: "és nem kell sietnem." },
+{ belégzés: "Kapcsolódom a légzésemhez", kilégzés: "és visszatérek a középpontomba." },
+{ belégzés: "Érzem az élet áramlását", kilégzés: "és együtt mozgok vele." },
+{ belégzés: "Figyelek a gondolataimra", kilégzés: "és nem azonosulok velük." },
+{ belégzés: "Kapcsolódom a belső csendhez", kilégzés: "és elcsendesedik az elmém." },
+{ belégzés: "Érzem a stabil alapot", kilégzés: "és megpihenek benne." },
+{ belégzés: "Tudatosan figyelek", kilégzés: "és nem reagálok automatikusan." },
+{ belégzés: "Nyitott vagyok az életre", kilégzés: "és elengedem az ellenállást." },
+{ belégzés: "Elfogadom önmagam", kilégzés: "és elengedem az ítélkezést." },
+{ belégzés: "Kapcsolódom a jelenhez", kilégzés: "és elengedem a múlt zaját." },
+
+{ belégzés: "Érzem a belső békét", kilégzés: "és minden kisimul bennem." },
+{ belégzés: "Kapcsolódom a stabilitáshoz", kilégzés: "és nem ingat meg semmi." },
+{ belégzés: "Tudatosan lélegzem", kilégzés: "és visszatérek önmagamhoz." },
+{ belégzés: "Figyelek a testemre", kilégzés: "és tisztelem a jelzéseit." },
+{ belégzés: "Nyugodtan vagyok jelen", kilégzés: "és elengedem a sürgetést." },
+{ belégzés: "Érzem a jelen erejét", kilégzés: "és teljesen itt vagyok." },
+{ belégzés: "Kapcsolódom a belső nyugalomhoz", kilégzés: "és elcsendesedik minden bennem." },
+{ belégzés: "Bízom az élet folyamatában", kilégzés: "és elengedem az irányítást." },
+{ belégzés: "Érzem a belső egyensúlyt", kilégzés: "és stabil vagyok." },
+{ belégzés: "Tudatosan jelen vagyok", kilégzés: "és békében vagyok." },
+
+{ belégzés: "Kapcsolódom a csendhez", kilégzés: "és megpihen az elmém." },
+{ belégzés: "Figyelek a légzésemre", kilégzés: "és megnyugszom." },
+{ belégzés: "Érzem a testem erejét", kilégzés: "és földelt vagyok." },
+{ belégzés: "Kapcsolódom a belső erőmhöz", kilégzés: "és bízom önmagamban." },
+{ belégzés: "Nyitott vagyok a változásra", kilégzés: "és rugalmasan haladok." },
+{ belégzés: "Érzem a nyugalmat", kilégzés: "és elengedem a feszültséget." },
+{ belégzés: "Kapcsolódom a jelenhez", kilégzés: "és itt vagyok teljesen." },
+{ belégzés: "Figyelmem tiszta", kilégzés: "és nem kalandozom el." },
+{ belégzés: "Tudatosan figyelek a jelenre", kilégzés: "és elengedem a múltat." },
+{ belégzés: "Elfogadom ami van", kilégzés: "és békében vagyok vele." },
+
+{ belégzés: "Kapcsolódom a belső csendhez", kilégzés: "és elcsendesedik minden." },
+{ belégzés: "Érzem a stabilitást magamban", kilégzés: "és biztonságban vagyok." },
+{ belégzés: "Tudatosan figyelek", kilégzés: "és visszatérek a jelenbe." },
+{ belégzés: "Nyugodtan lélegzem", kilégzés: "és megpihen az idegrendszerem." },
+{ belégzés: "Kapcsolódom a belső békémhez", kilégzés: "és elengedem a feszültséget." },
+{ belégzés: "Érzem az élet áramlását", kilégzés: "és együtt haladok vele." },
+{ belégzés: "Figyelek a gondolataimra", kilégzés: "és nem ragadok beléjük." },
+{ belégzés: "Kapcsolódom a stabilitásomhoz", kilégzés: "és megnyugszom." },
+{ belégzés: "Tudatos jelenlétben vagyok", kilégzés: "és elengedem a zajt." },
+{ belégzés: "Érzem a belső békét", kilégzés: "és elcsendesedik bennem minden." },
+
+{ belégzés: "Megengedem a lassulást", kilégzés: "és nem kell sietnem." },
+{ belégzés: "Kapcsolódom a légzésemhez", kilégzés: "és visszatérek önmagamhoz." },
+{ belégzés: "Érzem a jelen erejét", kilégzés: "és itt vagyok teljes figyelemmel." },
+{ belégzés: "Figyelek a testemre", kilégzés: "és tisztelem a határaimat." },
+{ belégzés: "Nyitott vagyok az életre", kilégzés: "és elfogadom a változást." },
+{ belégzés: "Kapcsolódom a csendhez", kilégzés: "és elcsendesedik az elmém." },
+{ belégzés: "Érzem a stabil alapot", kilégzés: "és megpihenek benne." },
+{ belégzés: "Tudatosan jelen vagyok", kilégzés: "és nem sodornak el a gondolatok." },
+{ belégzés: "Bízom magamban", kilégzés: "és elengedem a kételyeket." },
+{ belégzés: "Kapcsolódom a jelenhez", kilégzés: "és megérkezem önmagamba." },
+
+{ belégzés: "Érzem a belső nyugalmat", kilégzés: "és kisimul bennem minden." },
+{ belégzés: "Tudatosan figyelek", kilégzés: "és nem reagálok automatikusan." },
+{ belégzés: "Kapcsolódom a belső erőmhöz", kilégzés: "és stabil vagyok." },
+{ belégzés: "Érzem a testem jelzéseit", kilégzés: "és megengedem a pihenést." },
+{ belégzés: "Nyitott vagyok a pillanatra", kilégzés: "és elengedem az ellenállást." },
+{ belégzés: "Figyelek a légzésemre", kilégzés: "és megnyugszom." },
+{ belégzés: "Kapcsolódom a csendhez", kilégzés: "és elcsendesedik minden." },
+{ belégzés: "Érzem a jelen erejét", kilégzés: "és teljesen itt vagyok." },
+{ belégzés: "Tudatos jelenlétben vagyok", kilégzés: "és békében vagyok." },
+{ belégzés: "Megérkezem a jelenbe", kilégzés: "és elengedem a múltat." }
 
 ];
 
-const now = new Date();
-const start = new Date(now.getFullYear(), 0, 0);
-const day = Math.floor((now - start) / 86400000);
+// ================= NAPI INDEX (FIX MINDENKINEK) =================
 
-const today = mantrak[day % mantrak.length];
+// 2025. január 1. a kiindulási nap.
+// Ettől kezdve minden nap eggyel lép tovább.
+// Ha elfogy a lista, automatikusan újrakezdi.
+
+const startDate = new Date(2025, 0, 1); // 2025.01.01.
+const todayDate = new Date();
+
+startDate.setHours(0, 0, 0, 0);
+todayDate.setHours(0, 0, 0, 0);
+
+const diffDays = Math.floor(
+  (todayDate - startDate) / (1000 * 60 * 60 * 24)
+);
+
+const today = mantrak[
+  ((diffDays % mantrak.length) + mantrak.length) % mantrak.length
+];
+
+// ================= KIÍRÁS =================
 
 document.getElementById("mantra").innerHTML = `
   <div class="breath">
@@ -273,31 +432,13 @@ document.getElementById("mantra").innerHTML = `
   </div>
 `;
 
-
-// ================= DONE =================
-function markDone() {
-  localStorage.setItem("doneToday", new Date().toDateString());
-  document.getElementById("doneText").innerText = "✔ Ma elvégezted.";
-}
-
-if (localStorage.getItem("doneToday") === new Date().toDateString()) {
-  document.getElementById("doneText").innerText = "✔ Ma már elvégezted.";
-}
-
-
-// ================= RETURN MSG =================
-const lastVisit = localStorage.getItem("lastVisit");
-const todayStr = new Date().toDateString();
+// ================= RETURN TEXT =================
 
 document.getElementById("returnMsg").innerText =
-  lastVisit === todayStr
-    ? "Gyere vissza holnap is!"
-    : "Gyere vissza holnap is egy új gondolathangolásért.";
+  "Gyere vissza holnap is egy új gondolathangolásért.";
 
-localStorage.setItem("lastVisit", todayStr);
+// ================= HANG =================
 
-
-// ================= SOUND =================
 function toggleSound() {
   const audio = document.getElementById("bgSound");
 
@@ -324,6 +465,7 @@ function toggleSound() {
 </script>
 
 <footer class="site-footer">
+
     <div class="footer-links">
         <a href="/eletnavigator/pages/jogi-informaciok.html#impresszum">Impresszum</a>
         <a href="/eletnavigator/pages/jogi-informaciok.html#adatvedelem">Adatvédelem</a>
@@ -332,17 +474,23 @@ function toggleSound() {
 
     <p class="footer-text">© ÉletNavigátor</p>
 
-    <p style="font-size:9px; color:#888; margin-top:8px;">
-        Sound Effect by
-        <a href="https://pixabay.com/users/dany_photo-42436275/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=319791" target="_blank" rel="noopener">
-            Dany_photo
-        </a>
-        from
-        <a href="https://pixabay.com/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=319791" target="_blank" rel="noopener">
-            Pixabay
-        </a>
-    </p>
 </footer>
+
+
+
+
+<!-- IDE jön a licenc -->
+<div style="font-size:12px; opacity:0.6; margin:20px 0; text-align:center; line-height:1.6;">
+  Sound Effect by 
+  <a href="https://pixabay.com/users/dany_photo-42436275/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=319791" target="_blank">
+    Dany_photo
+  </a>
+  from 
+  <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=319791" target="_blank">
+    Pixabay
+  </a>
+</div>
+
 
 
 
