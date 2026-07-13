@@ -161,240 +161,812 @@
 // ================= MANTRA LISTA =================
 // ide jön majd a 365 végleges mantra
 const mantrak = [
-  // ================= 1–140 =================
 
-{ belégzés: "Megérkezem a jelenbe", kilégzés: "és elengedem a múlt zaját." },
-{ belégzés: "Tudatosan figyelek", kilégzés: "és elcsendesedik bennem minden." },
-{ belégzés: "Kapcsolódom a légzésemhez", kilégzés: "és visszatérek önmagamhoz." },
-{ belégzés: "Érzem a testem nyugalmát", kilégzés: "és elengedem a feszültséget." },
-{ belégzés: "Nyitott vagyok a napra", kilégzés: "és bízom az élet ritmusában." },
-{ belégzés: "Figyelmem tiszta és jelenlévő", kilégzés: "és nem ragadok gondolatokba." },
-{ belégzés: "Kapcsolódom a belső csendhez", kilégzés: "és megpihen az elmém." },
-{ belégzés: "Érzem a stabilitást magamban", kilégzés: "és biztonságban vagyok." },
-{ belégzés: "Elfogadom a pillanatot", kilégzés: "és megnyugszik bennem minden." },
-{ belégzés: "Tudatosan jelen vagyok", kilégzés: "és elengedem az ellenállást." },
+//1-100
+{ belégzés: "Megérkezem ehhez az új reggelhez", kilégzés: "és lehetőséget adok magamnak a tudatos kezdésre." },
 
-{ belégzés: "Kapcsolódom a belső erőmhöz", kilégzés: "és bízom önmagamban." },
-{ belégzés: "Érzem a belső békét", kilégzés: "és elcsendesedik a világ bennem." },
-{ belégzés: "Megengedem a lassulást", kilégzés: "és nem kell sietnem." },
-{ belégzés: "Figyelem a gondolataimat", kilégzés: "és nem azonosulok velük." },
-{ belégzés: "Nyugodtan lélegzem", kilégzés: "és megnyugszik az idegrendszerem." },
-{ belégzés: "Kapcsolódom a jelenhez", kilégzés: "és itt vagyok teljesen." },
-{ belégzés: "Érzem a testem jelzéseit", kilégzés: "és tiszteletben tartom őket." },
-{ belégzés: "Bízom az élet folyamatában", kilégzés: "és elengedem az irányítást." },
-{ belégzés: "Elfogadom önmagam", kilégzés: "és elengedem az önkritikát." },
-{ belégzés: "Kapcsolódom a csendhez", kilégzés: "és kitisztul az elmém." },
+{ belégzés: "Helyet teremtek a mai napnak", kilégzés: "és nyitottan fogadom mindazt, ami érkezik." },
 
-{ belégzés: "Érzem a jelen erejét", kilégzés: "és teljesen itt vagyok." },
-{ belégzés: "Tudatosan figyelek a légzésemre", kilégzés: "és megnyugszom." },
-{ belégzés: "Kapcsolódom a stabilitásomhoz", kilégzés: "és elengedem a félelmet." },
-{ belégzés: "Figyelek a belső hangomra", kilégzés: "és meghallom önmagam." },
-{ belégzés: "Nyitott vagyok az élet áramlására", kilégzés: "és nem állok ellen." },
-{ belégzés: "Érzem a nyugalmat magamban", kilégzés: "és elengedem a feszültséget." },
-{ belégzés: "Kapcsolódom a belső békémhez", kilégzés: "és megpihenek benne." },
-{ belégzés: "Tudatos jelenlétben vagyok", kilégzés: "és nem sodornak el a gondolatok." },
-{ belégzés: "Elfogadom ami van", kilégzés: "és békében vagyok vele." },
-{ belégzés: "Megérkezem önmagamhoz", kilégzés: "és itt vagyok most." },
+{ belégzés: "Észreveszem a pillanat egyszerűségét", kilégzés: "és nem keresek többet annál, ami most jelen van." },
 
-{ belégzés: "Érzem a testem erejét", kilégzés: "és földelt vagyok." },
-{ belégzés: "Kapcsolódom a belső csendhez", kilégzés: "és elcsendesedik minden." },
-{ belégzés: "Figyelek a jelen pillanatra", kilégzés: "és nem ragadnak el a gondolatok." },
-{ belégzés: "Tudatosan lélegzem", kilégzés: "és visszatérek a testembe." },
-{ belégzés: "Nyitott vagyok a változásra", kilégzés: "és rugalmasan haladok." },
-{ belégzés: "Érzem a belső egyensúlyt", kilégzés: "és stabilan jelen vagyok." },
-{ belégzés: "Kapcsolódom a jelenhez", kilégzés: "és elengedem a múlt zaját." },
-{ belégzés: "Figyelmem tiszta és fókuszált", kilégzés: "és nem kalandozom el." },
-{ belégzés: "Érzem az életet minden lélegzetben", kilégzés: "és hálát érzek." },
-{ belégzés: "Bízom magamban", kilégzés: "és elengedem a kételyeket." },
+{ belégzés: "Lassan felébredek önmagamhoz", kilégzés: "és figyelemmel fordulok a napom felé." },
 
-{ belégzés: "Megengedem az érzéseimet", kilégzés: "és teret adok nekik." },
-{ belégzés: "Kapcsolódom a belső nyugalomhoz", kilégzés: "és kisimul bennem minden." },
-{ belégzés: "Érzem a stabil alapot", kilégzés: "és megpihenek benne." },
-{ belégzés: "Tudatosan figyelek", kilégzés: "és nem reagálok automatikusan." },
-{ belégzés: "Nyitott vagyok a jelenre", kilégzés: "és elengedem a múltat." },
-{ belégzés: "Kapcsolódom a csendhez", kilégzés: "és elcsendesedik az elmém." },
-{ belégzés: "Érzem a belső békét", kilégzés: "és megpihen bennem minden." },
-{ belégzés: "Figyelem a légzésem", kilégzés: "és visszatérek önmagamhoz." },
-{ belégzés: "Elfogadom a változást", kilégzés: "és rugalmas maradok." },
-{ belégzés: "Kapcsolódom a jelenhez", kilégzés: "és biztonságban vagyok." },
+{ belégzés: "A reggel csendjében megtalálom a saját ritmusomat", kilégzés: "és nem kell mások tempójához igazodnom." },
 
-{ belégzés: "Tudatosan jelen vagyok", kilégzés: "és elengedem a sürgetést." },
-{ belégzés: "Érzem a belső csendet", kilégzés: "és megnyugszik az elmém." },
-{ belégzés: "Kapcsolódom a belső erőhöz", kilégzés: "és stabil vagyok magamban." },
-{ belégzés: "Figyelek a testemre", kilégzés: "és tisztelem a határaimat." },
-{ belégzés: "Nyugodtan vagyok jelen", kilégzés: "és elengedem a feszültséget." },
-{ belégzés: "Bízom a folyamatban", kilégzés: "és nem akarok mindent irányítani." },
-{ belégzés: "Érzem a jelen erejét", kilégzés: "és teljes figyelemmel vagyok itt." },
-{ belégzés: "Kapcsolódom a légzésemhez", kilégzés: "és lelassulok." },
-{ belégzés: "Elfogadom önmagam", kilégzés: "és elengedem az összehasonlítást." },
-{ belégzés: "Érzem a nyugalmat", kilégzés: "és elcsendesedik bennem minden." },
+{ belégzés: "Figyelmet adok ennek a pillanatnak", kilégzés: "és hagyom, hogy a jelen vezessen." },
 
-{ belégzés: "Megengedem a pihenést", kilégzés: "és elengedem a bűntudatot." },
-{ belégzés: "Kapcsolódom a jelenhez", kilégzés: "és elengedem a múltat." },
-{ belégzés: "Tudatosan figyelek", kilégzés: "és visszatérek a testembe." },
-{ belégzés: "Érzem a stabilitást", kilégzés: "és biztonságban vagyok." },
-{ belégzés: "Nyitott vagyok az életre", kilégzés: "és elfogadom ami van." },
-{ belégzés: "Figyelek a gondolataimra", kilégzés: "és nem ragadok beléjük." },
-{ belégzés: "Kapcsolódom a csendhez", kilégzés: "és elcsendesedik minden." },
-{ belégzés: "Érzem az élet áramlását", kilégzés: "és együtt haladok vele." },
-{ belégzés: "Tudatos jelenlétben vagyok", kilégzés: "és békében vagyok." },
-{ belégzés: "Megérkezem a jelenbe", kilégzés: "és itt vagyok teljesen." },
-// ================= 141–280 =================
+{ belégzés: "Elfogadom ezt a napot olyannak, amilyen", kilégzés: "és kíváncsian találkozom az új tapasztalatokkal." },
 
-{ belégzés: "Kapcsolódom a belső nyugalomhoz", kilégzés: "és elcsendesedik bennem minden." },
-{ belégzés: "Érzem a stabilitást magamban", kilégzés: "és nem ingatnak meg a külső dolgok." },
-{ belégzés: "Tudatosan figyelek a jelenre", kilégzés: "és elengedem a múlt súlyát." },
-{ belégzés: "Nyitott vagyok a változásra", kilégzés: "és rugalmasan haladok az áramlással." },
-{ belégzés: "Kapcsolódom a légzésemhez", kilégzés: "és visszatérek a belső középpontomba." },
-{ belégzés: "Érzem a belső békét", kilégzés: "és minden kisimul bennem." },
-{ belégzés: "Figyelmem tiszta és nyugodt", kilégzés: "és nem ragadok a gondolatokba." },
-{ belégzés: "Elfogadom a pillanatot", kilégzés: "és békében vagyok vele." },
-{ belégzés: "Kapcsolódom a belső erőmhöz", kilégzés: "és stabilan állok önmagamban." },
-{ belégzés: "Tudatosan jelen vagyok", kilégzés: "és nem sürgetek semmit." },
+{ belégzés: "Megengedem magamnak a nyugodt indulást", kilégzés: "és nem akarok mindent egyszerre elérni." },
 
-{ belégzés: "Érzem a testem jelzéseit", kilégzés: "és figyelemmel fordulok feléjük." },
-{ belégzés: "Megengedem a lassulást", kilégzés: "és nem kell teljesítenem most." },
-{ belégzés: "Kapcsolódom a csendhez", kilégzés: "és elcsendesedik az elmém." },
-{ belégzés: "Nyugodtan lélegzem", kilégzés: "és megpihen az idegrendszerem." },
-{ belégzés: "Érzem a jelen erejét", kilégzés: "és teljesen itt vagyok." },
-{ belégzés: "Bízom az élet folyamatában", kilégzés: "és elengedem az irányítást." },
-{ belégzés: "Figyelek a gondolataimra", kilégzés: "és hagyom őket továbblépni." },
-{ belégzés: "Kapcsolódom a belső csendhez", kilégzés: "és kitisztul minden bennem." },
-{ belégzés: "Érzem a stabil alapot", kilégzés: "és biztonságban vagyok." },
-{ belégzés: "Elfogadom önmagam", kilégzés: "és elengedem az ítélkezést." },
+{ belégzés: "Érzékelem a testem ébredő energiáját", kilégzés: "és tiszteletben tartom a saját szükségleteimet." },
 
-{ belégzés: "Kapcsolódom a jelenhez", kilégzés: "és elengedem a múltat." },
-{ belégzés: "Tudatosan figyelek", kilégzés: "és visszatérek a testembe." },
-{ belégzés: "Érzem a nyugalmat", kilégzés: "és elcsendesedik bennem minden." },
-{ belégzés: "Figyelem a légzésemet", kilégzés: "és megnyugszik az elmém." },
-{ belégzés: "Nyitott vagyok a napra", kilégzés: "és bízom a saját ritmusomban." },
-{ belégzés: "Kapcsolódom a belső békémhez", kilégzés: "és megpihenek benne." },
-{ belégzés: "Érzem az élet áramlását", kilégzés: "és együtt haladok vele." },
-{ belégzés: "Tudatos jelenlétben vagyok", kilégzés: "és elengedem a zavaró zajokat." },
-{ belégzés: "Figyelek a belső hangomra", kilégzés: "és meghallom önmagam." },
-{ belégzés: "Érzem a belső egyensúlyt", kilégzés: "és stabil vagyok." },
+{ belégzés: "A figyelmemet arra irányítom, ami számít", kilégzés: "és elhagyom a felesleges terheket." },
 
-{ belégzés: "Kapcsolódom a stabilitásomhoz", kilégzés: "és elengedem a félelmet." },
-{ belégzés: "Nyugodtan szemlélem a napomat", kilégzés: "és nem reagálok automatikusan." },
-{ belégzés: "Megengedem az érzéseimet", kilégzés: "és teret adok nekik." },
-{ belégzés: "Tudatosan figyelek a jelenre", kilégzés: "és nem ragadok le a múltban." },
-{ belégzés: "Érzem a testem erejét", kilégzés: "és földelt vagyok." },
-{ belégzés: "Kapcsolódom a csendhez", kilégzés: "és elcsendesedik minden." },
-{ belégzés: "Figyelmem tiszta és fókuszált", kilégzés: "és nem kalandozom el." },
-{ belégzés: "Bízom magamban", kilégzés: "és elengedem a kételyeket." },
-{ belégzés: "Elfogadom a változást", kilégzés: "és rugalmas maradok." },
-{ belégzés: "Kapcsolódom a jelenhez", kilégzés: "és biztonságban vagyok." },
+{ belégzés: "Úgy kezdem ezt a napot, ahogy szeretnék jelen lenni", kilégzés: "és választok egy tudatosabb hozzáállást." },
 
-{ belégzés: "Érzem a belső csendet", kilégzés: "és megpihen az elmém." },
-{ belégzés: "Tudatosan lélegzem", kilégzés: "és visszatérek önmagamhoz." },
-{ belégzés: "Figyelek a gondolataimra", kilégzés: "és nem azonosulok velük." },
-{ belégzés: "Kapcsolódom a belső erőhöz", kilégzés: "és stabil vagyok magamban." },
-{ belégzés: "Nyitott vagyok az életre", kilégzés: "és elengedem az ellenállást." },
-{ belégzés: "Érzem a nyugalmat magamban", kilégzés: "és elengedem a feszültséget." },
-{ belégzés: "Kapcsolódom a légzésemhez", kilégzés: "és lelassulok." },
-{ belégzés: "Elfogadom a pillanatot", kilégzés: "és nincs ellenállás bennem." },
-{ belégzés: "Tudatosan jelen vagyok", kilégzés: "és elengedem a sürgetést." },
-{ belégzés: "Érzem a stabilitást", kilégzés: "és megnyugszom." },
+{ belégzés: "Teret adok a reggeli csendnek", kilégzés: "és meghallom azt, ami bennem történik." },
 
-{ belégzés: "Kapcsolódom a belső nyugalomhoz", kilégzés: "és kisimul bennem minden." },
-{ belégzés: "Figyelek a testemre", kilégzés: "és tisztelem a határaimat." },
-{ belégzés: "Érzem a jelen erejét", kilégzés: "és teljes figyelemmel vagyok itt." },
-{ belégzés: "Nyugodtan vagyok jelen", kilégzés: "és elengedem a feszültséget." },
-{ belégzés: "Kapcsolódom a csendhez", kilégzés: "és megpihen az elmém." },
-{ belégzés: "Tudatos jelenlétben vagyok", kilégzés: "és nem sodornak el a gondolatok." },
-{ belégzés: "Érzem a belső békét", kilégzés: "és elcsendesedik minden bennem." },
-{ belégzés: "Megengedem a lassulást", kilégzés: "és nem kell sietnem." },
-{ belégzés: "Kapcsolódom a stabilitásomhoz", kilégzés: "és biztonságban vagyok." },
-{ belégzés: "Elfogadom önmagam", kilégzés: "és elengedem az összehasonlítást." },
+{ belégzés: "Nem kell előre ismernem minden választ", kilégzés: "és bizalommal indulok el a következő lépéssel." },
 
-{ belégzés: "Figyelem a légzésem", kilégzés: "és visszatérek a jelenbe." },
-{ belégzés: "Érzem a testem nyugalmát", kilégzés: "és elengedem a feszültséget." },
-{ belégzés: "Kapcsolódom a jelenhez", kilégzés: "és elengedem a múlt zaját." },
-{ belégzés: "Tudatosan figyelek", kilégzés: "és nem reagálok automatikusan." },
-{ belégzés: "Nyitott vagyok a változásra", kilégzés: "és rugalmasan haladok." },
-{ belégzés: "Érzem a belső egyensúlyt", kilégzés: "és stabilan jelen vagyok." },
-{ belégzés: "Kapcsolódom a csendhez", kilégzés: "és elcsendesedik az elmém." },
-{ belégzés: "Figyelek a jelen pillanatra", kilégzés: "és nem határoz meg a múlt." },
-{ belégzés: "Tudatosan lélegzem", kilégzés: "és megnyugszom." },
-{ belégzés: "Érzem az élet áramlását", kilégzés: "és együtt haladok vele." },
-// ================= 281–400 =================
+{ belégzés: "Értékelem ezt az új lehetőséget", kilégzés: "és figyelemmel alakítom a mai napomat." },
 
-{ belégzés: "Kapcsolódom a jelenhez", kilégzés: "és megérkezem önmagamba." },
-{ belégzés: "Érzem a belső csendet", kilégzés: "és minden elcsendesedik bennem." },
-{ belégzés: "Tudatosan figyelek a légzésemre", kilégzés: "és elengedem a gondolatok zaját." },
-{ belégzés: "Nyitott vagyok a pillanatra", kilégzés: "és elfogadom ami van." },
-{ belégzés: "Kapcsolódom a stabilitásomhoz", kilégzés: "és biztonságban vagyok önmagammal." },
-{ belégzés: "Érzem a testem jelenlétét", kilégzés: "és megpihenek benne." },
-{ belégzés: "Figyelmem tiszta és nyugodt", kilégzés: "és nem sodor el semmi." },
-{ belégzés: "Kapcsolódom a belső erőmhöz", kilégzés: "és bízom a saját utamban." },
-{ belégzés: "Érzem a nyugalmat magamban", kilégzés: "és elengedem a feszültséget." },
-{ belégzés: "Tudatos jelenlétben vagyok", kilégzés: "és itt vagyok teljesen." },
+{ belégzés: "Kiengedem a tegnap maradék súlyát", kilégzés: "és helyet készítek annak, ami ma vár rám." },
 
-{ belégzés: "Megengedem a lassulást", kilégzés: "és nem kell sietnem." },
-{ belégzés: "Kapcsolódom a légzésemhez", kilégzés: "és visszatérek a középpontomba." },
-{ belégzés: "Érzem az élet áramlását", kilégzés: "és együtt mozgok vele." },
-{ belégzés: "Figyelek a gondolataimra", kilégzés: "és nem azonosulok velük." },
-{ belégzés: "Kapcsolódom a belső csendhez", kilégzés: "és elcsendesedik az elmém." },
-{ belégzés: "Érzem a stabil alapot", kilégzés: "és megpihenek benne." },
-{ belégzés: "Tudatosan figyelek", kilégzés: "és nem reagálok automatikusan." },
-{ belégzés: "Nyitott vagyok az életre", kilégzés: "és elengedem az ellenállást." },
-{ belégzés: "Elfogadom önmagam", kilégzés: "és elengedem az ítélkezést." },
-{ belégzés: "Kapcsolódom a jelenhez", kilégzés: "és elengedem a múlt zaját." },
+{ belégzés: "Megfigyelem a gondolataim érkezését", kilégzés: "és szabadon hagyom őket továbbhaladni." },
 
-{ belégzés: "Érzem a belső békét", kilégzés: "és minden kisimul bennem." },
-{ belégzés: "Kapcsolódom a stabilitáshoz", kilégzés: "és nem ingat meg semmi." },
-{ belégzés: "Tudatosan lélegzem", kilégzés: "és visszatérek önmagamhoz." },
-{ belégzés: "Figyelek a testemre", kilégzés: "és tisztelem a jelzéseit." },
-{ belégzés: "Nyugodtan vagyok jelen", kilégzés: "és elengedem a sürgetést." },
-{ belégzés: "Érzem a jelen erejét", kilégzés: "és teljesen itt vagyok." },
-{ belégzés: "Kapcsolódom a belső nyugalomhoz", kilégzés: "és elcsendesedik minden bennem." },
-{ belégzés: "Bízom az élet folyamatában", kilégzés: "és elengedem az irányítást." },
-{ belégzés: "Érzem a belső egyensúlyt", kilégzés: "és stabil vagyok." },
-{ belégzés: "Tudatosan jelen vagyok", kilégzés: "és békében vagyok." },
+{ belégzés: "Kapcsolatba lépek a belső nyugalmammal", kilégzés: "és ebből a helyből indulok tovább." },
 
-{ belégzés: "Kapcsolódom a csendhez", kilégzés: "és megpihen az elmém." },
-{ belégzés: "Figyelek a légzésemre", kilégzés: "és megnyugszom." },
-{ belégzés: "Érzem a testem erejét", kilégzés: "és földelt vagyok." },
-{ belégzés: "Kapcsolódom a belső erőmhöz", kilégzés: "és bízom önmagamban." },
-{ belégzés: "Nyitott vagyok a változásra", kilégzés: "és rugalmasan haladok." },
-{ belégzés: "Érzem a nyugalmat", kilégzés: "és elengedem a feszültséget." },
-{ belégzés: "Kapcsolódom a jelenhez", kilégzés: "és itt vagyok teljesen." },
-{ belégzés: "Figyelmem tiszta", kilégzés: "és nem kalandozom el." },
-{ belégzés: "Tudatosan figyelek a jelenre", kilégzés: "és elengedem a múltat." },
-{ belégzés: "Elfogadom ami van", kilégzés: "és békében vagyok vele." },
+{ belégzés: "A mai nap nem ismétlés, hanem új találkozás", kilégzés: "és kíváncsian figyelem a lehetőségeit." },
 
-{ belégzés: "Kapcsolódom a belső csendhez", kilégzés: "és elcsendesedik minden." },
-{ belégzés: "Érzem a stabilitást magamban", kilégzés: "és biztonságban vagyok." },
-{ belégzés: "Tudatosan figyelek", kilégzés: "és visszatérek a jelenbe." },
-{ belégzés: "Nyugodtan lélegzem", kilégzés: "és megpihen az idegrendszerem." },
-{ belégzés: "Kapcsolódom a belső békémhez", kilégzés: "és elengedem a feszültséget." },
-{ belégzés: "Érzem az élet áramlását", kilégzés: "és együtt haladok vele." },
-{ belégzés: "Figyelek a gondolataimra", kilégzés: "és nem ragadok beléjük." },
-{ belégzés: "Kapcsolódom a stabilitásomhoz", kilégzés: "és megnyugszom." },
-{ belégzés: "Tudatos jelenlétben vagyok", kilégzés: "és elengedem a zajt." },
-{ belégzés: "Érzem a belső békét", kilégzés: "és elcsendesedik bennem minden." },
+{ belégzés: "Észreveszem a körülöttem lévő apró dolgokat", kilégzés: "és teret adok a hálának." },
 
-{ belégzés: "Megengedem a lassulást", kilégzés: "és nem kell sietnem." },
-{ belégzés: "Kapcsolódom a légzésemhez", kilégzés: "és visszatérek önmagamhoz." },
-{ belégzés: "Érzem a jelen erejét", kilégzés: "és itt vagyok teljes figyelemmel." },
-{ belégzés: "Figyelek a testemre", kilégzés: "és tisztelem a határaimat." },
-{ belégzés: "Nyitott vagyok az életre", kilégzés: "és elfogadom a változást." },
-{ belégzés: "Kapcsolódom a csendhez", kilégzés: "és elcsendesedik az elmém." },
-{ belégzés: "Érzem a stabil alapot", kilégzés: "és megpihenek benne." },
-{ belégzés: "Tudatosan jelen vagyok", kilégzés: "és nem sodornak el a gondolatok." },
-{ belégzés: "Bízom magamban", kilégzés: "és elengedem a kételyeket." },
-{ belégzés: "Kapcsolódom a jelenhez", kilégzés: "és megérkezem önmagamba." },
+{ belégzés: "Nem sürgetem a reggel kibontakozását", kilégzés: "és hagyom, hogy a saját ritmusában érkezzen meg." },
 
-{ belégzés: "Érzem a belső nyugalmat", kilégzés: "és kisimul bennem minden." },
-{ belégzés: "Tudatosan figyelek", kilégzés: "és nem reagálok automatikusan." },
-{ belégzés: "Kapcsolódom a belső erőmhöz", kilégzés: "és stabil vagyok." },
-{ belégzés: "Érzem a testem jelzéseit", kilégzés: "és megengedem a pihenést." },
-{ belégzés: "Nyitott vagyok a pillanatra", kilégzés: "és elengedem az ellenállást." },
-{ belégzés: "Figyelek a légzésemre", kilégzés: "és megnyugszom." },
-{ belégzés: "Kapcsolódom a csendhez", kilégzés: "és elcsendesedik minden." },
-{ belégzés: "Érzem a jelen erejét", kilégzés: "és teljesen itt vagyok." },
-{ belégzés: "Tudatos jelenlétben vagyok", kilégzés: "és békében vagyok." },
-{ belégzés: "Megérkezem a jelenbe", kilégzés: "és elengedem a múltat." }
+{ belégzés: "Békésebb figyelemmel fordulok önmagam felé", kilégzés: "és elfogadom azt, ahol most tartok." },
+
+{ belégzés: "A mai nap első pillanatai értékesek", kilégzés: "és tudatosan választom meg, hogyan töltöm őket." },
+
+{ belégzés: "Érzem a jelen stabil alapját", kilégzés: "és innen tekintek a mai feladatokra." },
+
+{ belégzés: "Nyitottsággal fogadom a változásokat", kilégzés: "és rugalmas maradok az út során." },
+
+{ belégzés: "A figyelmem visszatér ahhoz, ami most van", kilégzés: "és nem vesz el a későbbi aggodalmakban." },
+
+{ belégzés: "Engedem, hogy a reggel formálja a hangulatomat", kilégzés: "és tudatosan választom meg a jelenlétemet." },
+
+{ belégzés: "Megbecsülöm ezt a csendes kezdetet", kilégzés: "és erőt merítek belőle a naphoz." },
+
+{ belégzés: "Nem tökéletes napot keresek", kilégzés: "hanem valódi pillanatokat szeretnék megélni." },
+
+{ belégzés: "Figyelemmel fordulok a saját utam felé", kilégzés: "és nem hasonlítom másokéhoz." },
+
+{ belégzés: "Hagyom, hogy a kíváncsiság vezessen", kilégzés: "és új szemmel nézek a megszokott dolgokra." },
+
+{ belégzés: "A mai reggel egy tiszta lap", kilégzés: "és lehetőséget ad az újrakezdésre." },
+
+{ belégzés: "Érzem a pillanat nyugalmát", kilégzés: "és magammal viszem a nap további részébe." },
+
+{ belégzés: "Tudatosan választom meg az első gondolatomat", kilégzés: "és ezzel irányt adok a napomnak." },
+
+{ belégzés: "Megengedem, hogy a dolgok kibontakozzanak", kilégzés: "és nem akarom minden részletét irányítani." },
+
+{ belégzés: "Figyelek arra, hogyan vagyok jelen", kilégzés: "és nem csak arra, mit teljesítek." },
+
+{ belégzés: "A mai nap nem teher, hanem tapasztalat", kilégzés: "és nyitottan találkozom vele." },
+
+{ belégzés: "Elfogadom a reggel lassú átmenetét", kilégzés: "és időt adok magamnak az érkezésre." },
+
+{ belégzés: "Észreveszem a bennem lévő erőforrásokat", kilégzés: "és bizalommal támaszkodom rájuk." },
+
+{ belégzés: "Nem viszem tovább azt, ami már elmúlt", kilégzés: "és figyelmemet a jelen felé fordítom." },
+
+{ belégzés: "A mai naphoz friss figyelemmel érkezem", kilégzés: "és lehetőséget látok benne." },
+
+{ belégzés: "Megállok egy pillanatra önmagam mellett", kilégzés: "és meghallgatom, mire van szükségem." },
+
+{ belégzés: "A nyugodt kezdet belülről indul", kilégzés: "és ezt a nyugalmat magammal vihetem." },
+
+{ belégzés: "Nem kell sietve belépnem a napba", kilégzés: "és választhatom a tudatos jelenlétet." },
+
+{ belégzés: "Értékelem az egyszerű pillanatokat", kilégzés: "és észreveszem bennük a teljességet." },
+
+{ belégzés: "A reggel emlékeztet arra, hogy újra kezdhetek", kilégzés: "és minden pillanatban választhatok." },
+
+{ belégzés: "Figyelmemmel gondoskodom erről a napról", kilégzés: "és szeretettel alakítom a következő órákat." },
+
+{ belégzés: "Befogadom azt, amit ez a reggel ad", kilégzés: "és békével indulok tovább." },
+
+{ belégzés: "Ma is lehetőségem van másképp figyelni", kilégzés: "és tudatosabban kapcsolódni önmagamhoz." },
+
+{ belégzés: "Megérkezem a saját életem pillanatába", kilégzés: "és innen indulok el a mai napon." },
+
+{ belégzés: "Bízom abban, hogy képes vagyok megoldani, ami érkezik", kilégzés: "és nem kell előre minden választ ismernem." },
+
+{ belégzés: "Elfogadom a mai nap bizonytalanságait", kilégzés: "és lehetőséget látok bennük a tanulásra." },
+
+{ belégzés: "Erőt találok abban, hogy jelen vagyok", kilégzés: "és nem a félelmeim irányítanak." },
+
+{ belégzés: "Türelemmel fordulok a saját folyamataim felé", kilégzés: "és megengedem a fejlődés természetes ütemét." },
+
+{ belégzés: "Észreveszem, mi az, ami már most jó az életemben", kilégzés: "és teret adok az elégedettség érzésének." },
+
+{ belégzés: "Ma figyelmesebben találkozom másokkal", kilégzés: "és valódi jelenléttel hallgatom őket." },
+
+{ belégzés: "A változás nem mindig veszteség", kilégzés: "és nyitott maradok az új irányokra." },
+
+{ belégzés: "Megengedem magamnak, hogy emberi legyek", kilégzés: "és nem várok tökéletességet magamtól." },
+
+{ belégzés: "A tapasztalataim formálnak engem", kilégzés: "és minden nap lehetőség a tanulásra." },
+
+{ belégzés: "Figyelek arra, amit a testem jelez", kilégzés: "és tisztelettel válaszolok a szükségleteire." },
+
+{ belégzés: "Nem minden pillanat kíván gyors megoldást", kilégzés: "és hagyom, hogy néha egyszerűen csak megtörténjen." },
+
+{ belégzés: "Kedvesebben beszélek önmagamhoz", kilégzés: "és olyan támogatást adok magamnak, amire szükségem van." },
+
+{ belégzés: "A mai döntéseimet tiszta figyelemmel hozom meg", kilégzés: "és nem automatikus szokásokból cselekszem." },
+
+{ belégzés: "Helyet adok a nyugodt gondolatoknak", kilégzés: "és nem táplálom tovább a felesleges aggodalmakat." },
+
+{ belégzés: "Értékelem az apró előrelépéseket", kilégzés: "és nem csak a nagy eredményeket veszem észre." },
+
+{ belégzés: "Nyitott szívvel fordulok a körülöttem lévőkhöz", kilégzés: "és kapcsolódást teremtek a figyelmemmel." },
+
+{ belégzés: "Megtanulok együtt lenni azzal, ami van", kilégzés: "és nem küzdök minden pillanat ellen." },
+
+{ belégzés: "A lassabb tempó is lehet haladás", kilégzés: "és minden lépésnek megvan a maga értéke." },
+
+{ belégzés: "Ma helyet teremtek a kíváncsiságnak", kilégzés: "és új lehetőségeket fedezek fel." },
+
+{ belégzés: "Figyelem, hogyan beszélek magammal", kilégzés: "és tudatosan választom a támogatóbb hangot." },
+
+{ belégzés: "Nem kell minden terhet egyedül vinnem", kilégzés: "és megengedem magamnak a segítség elfogadását." },
+
+{ belégzés: "A múlt tapasztalat, nem útmutató minden helyzetre", kilégzés: "és szabadon alakíthatom a jelenemet." },
+
+{ belégzés: "Észreveszem a pillanat szépségét", kilégzés: "és nem rohanok el mellette figyelem nélkül." },
+
+{ belégzés: "Ma egyensúlyt keresek a cselekvés és a pihenés között", kilégzés: "és figyelek az energiám jelzéseire." },
+
+{ belégzés: "Bátorságot találok a kis lépésekben", kilégzés: "és nem becsülöm alá a lassú változást." },
+
+{ belégzés: "A figyelmemmel alakítom a kapcsolataimat", kilégzés: "és több megértést viszek a találkozásaimba." },
+
+{ belégzés: "Elengedem azt az elvárást, hogy mindennek azonnal készen kell lennie", kilégzés: "és elfogadom a folyamatokat." },
+
+{ belégzés: "A mai napban nem csak feladatokat látok", kilégzés: "és helyet hagyok az örömnek is." },
+
+{ belégzés: "Megfigyelem a reakcióim mögötti érzéseket", kilégzés: "és nagyobb tudatossággal válaszolok." },
+
+{ belégzés: "Érzem, hogy a változás része az életnek", kilégzés: "és rugalmasan alkalmazkodom hozzá." },
+
+{ belégzés: "A figyelmes jelenlét ajándék önmagamnak", kilégzés: "és azoknak is, akikkel találkozom." },
+
+{ belégzés: "Ma nem csak elvégzem a feladataimat", kilégzés: "hanem tudatosan részt veszek a napomban." },
+
+{ belégzés: "Elfogadom, hogy vannak könnyebb és nehezebb pillanatok", kilégzés: "és mindkettőből tanulhatok." },
+
+{ belégzés: "A türelem teret ad a dolgok kibontakozásának", kilégzés: "és nem sürgetem azt, ami érlelődik." },
+
+{ belégzés: "Észreveszem a választási lehetőségeimet", kilégzés: "és felelősen alakítom a következő lépésemet." },
+
+{ belégzés: "Ma több figyelmet adok a valódi kapcsolódásnak", kilégzés: "és kevesebbet a felszínes zajnak." },
+
+{ belégzés: "Megengedem magamnak a pihenés pillanatait", kilégzés: "és felismerem azok fontosságát." },
+
+{ belégzés: "A hibáim nem zárják le az utamat", kilégzés: "és új tapasztalatokhoz vezethetnek." },
+
+{ belégzés: "Ma békésebben viszonyulok ahhoz, amit nem tudok irányítani", kilégzés: "és energiát őrzök arra, amin változtathatok." },
+
+{ belégzés: "Figyelmemmel értéket teremthetek", kilégzés: "és tudatosan választom meg, mire fordítom." },
+
+{ belégzés: "A belső egyensúlyom nem a körülményektől függ teljesen", kilégzés: "és naponta ápolhatom magamban." },
+
+{ belégzés: "Kíváncsian figyelem a mai nap történéseit", kilégzés: "és nem csak elvárásokon keresztül nézem őket." },
+
+{ belégzés: "Elfogadom a saját utamat", kilégzés: "és nem hasonlítom folyamatosan másokéhoz." },
+
+{ belégzés: "Ma tudatosabban választom meg a szavaimat", kilégzés: "és békésebb kapcsolatokat építek." },
+
+{ belégzés: "A figyelmem visszavezet önmagamhoz", kilégzés: "és segít tisztábban látni a helyzeteket." },
+
+{ belégzés: "Nem kell minden pillanatot irányítanom", kilégzés: "és megtapasztalhatom a bizalom erejét." },
+
+{ belégzés: "A mai nap új találkozás önmagammal", kilégzés: "és lehetőség a tudatosabb jelenlétre." },
+
+{ belégzés: "Megbecsülöm azt, ahol most tartok", kilégzés: "és nyitottan haladok tovább." },
+
+{ belégzés: "A nyugalom nem a tökéletes körülményekből születik", kilégzés: "hanem abból, ahogyan kapcsolódom hozzájuk." },
+
+
+
+
+
+
+
+
+//101-200
+
+{ belégzés: "Emlékeztetem magam arra, hogy minden reggel új kezdet", kilégzés: "és ma is alakíthatom, hogyan szeretnék jelen lenni." },
+
+{ belégzés: "A mai napot nem teherként, hanem lehetőségként fogadom", kilégzés: "és kíváncsian fordulok az élmények felé." },
+
+{ belégzés: "Figyelmet szentelek annak, ami igazán fontos", kilégzés: "és nem engedem, hogy az apróságok elvonják az energiámat." },
+
+{ belégzés: "Megőrzöm a belső csend egy részét", kilégzés: "és magammal viszem a nap mozgalmasságába." },
+
+{ belégzés: "Észreveszem a pillanat apró ajándékait", kilégzés: "és hagyom, hogy örömöt hozzanak a napomba." },
+
+{ belégzés: "Ma nem a tökéletességet keresem", kilégzés: "hanem az őszinte és tudatos jelenlétet." },
+
+{ belégzés: "Elfogadom, hogy minden nap más energiával érkezik", kilégzés: "és ehhez rugalmasan alkalmazkodom." },
+
+{ belégzés: "Közelebb kerülök ahhoz, ami valóban számít", kilégzés: "és elengedem, ami csak feleslegesen terhel." },
+
+{ belégzés: "A reggeli első percek irányt adnak a napomnak", kilégzés: "és figyelmesen választom meg ezt az irányt." },
+
+{ belégzés: "Belső figyelemmel kezdem a napot", kilégzés: "és nyitott maradok az új tapasztalatokra." },
+
+{ belégzés: "Nem kell sietnem ahhoz, hogy haladjak", kilégzés: "és megtalálhatom a saját tempómat." },
+
+{ belégzés: "Ma lehetőséget adok magamnak a változásra", kilégzés: "és nem ragaszkodom ahhoz, ami már nem szolgál." },
+
+{ belégzés: "Megfigyelem, mire irányul természetesen a figyelmem", kilégzés: "és tudatosan választok új fókuszt, ha szükséges." },
+
+{ belégzés: "A nyugodt jelenlétből tisztább döntések születnek", kilégzés: "és időt adok magamnak a választásra." },
+
+{ belégzés: "Értékelem azokat a dolgokat, amelyek már most körülvesznek", kilégzés: "és nem csak azt keresem, ami hiányzik." },
+
+{ belégzés: "Ma figyelmesebben bánok a saját energiámmal", kilégzés: "és olyan dolgokra fordítom, amelyek építenek." },
+
+{ belégzés: "A gondolataim jönnek és mennek", kilégzés: "és én döntöm el, melyiknek adok figyelmet." },
+
+{ belégzés: "Megengedem, hogy a nap fokozatosan bontakozzon ki", kilégzés: "és nem akarom előre minden részletét ismerni." },
+
+{ belégzés: "A kapcsolódás lehetősége minden találkozásban ott van", kilégzés: "és figyelemmel közelebb kerülhetek másokhoz." },
+
+{ belégzés: "Ma keresem az egyszerűség pillanatait", kilégzés: "és felismerem bennük a nyugalom forrását." },
+
+{ belégzés: "Elfogadom a saját ritmusomat", kilégzés: "és nem mérem magam állandóan másokhoz." },
+
+{ belégzés: "A mai nap nem ismétli a tegnapit", kilégzés: "és új lehetőségeket tartogat számomra." },
+
+{ belégzés: "Tisztelem azt az utat, amelyen haladok", kilégzés: "és türelemmel kísérem saját fejlődésemet." },
+
+{ belégzés: "Ma figyelek a szándékaimra", kilégzés: "és ezek alapján alakítom a cselekedeteimet." },
+
+{ belégzés: "A belső nyugalom egy választott irány", kilégzés: "és minden pillanatban közelebb kerülhetek hozzá." },
+
+{ belégzés: "Nem kell minden kérdésre azonnal választ találnom", kilégzés: "és teret adok a felismerések érkezésének." },
+
+{ belégzés: "A reggel emlékeztet az újrakezdés lehetőségére", kilégzés: "és bizalommal indulok a nap felé." },
+
+{ belégzés: "Ma tudatosabban figyelek arra, hogyan reagálok", kilégzés: "és több választási lehetőséget teremtek magamnak." },
+
+{ belégzés: "Megbecsülöm a csendes pillanatokat", kilégzés: "és nem töltöm ki őket felesleges zajjal." },
+
+{ belégzés: "A figyelmem alakítja a tapasztalataimat", kilégzés: "és ezért gondosan választom meg, mire fordítom." },
+
+{ belégzés: "Nyitottan fogadom a mai találkozásokat", kilégzés: "és lehetőséget látok minden kapcsolódásban." },
+
+{ belégzés: "Ma kevesebb ítélkezéssel fordulok önmagam felé", kilégzés: "és több megértést adok magamnak." },
+
+{ belégzés: "A változás része az utamnak", kilégzés: "és nem kell mindig ellenállnom neki." },
+
+{ belégzés: "Észreveszem, mi tölt fel igazán", kilégzés: "és tudatosabban választom ezeket a pillanatokat." },
+
+{ belégzés: "Ma a figyelmemet nem a hiányokra irányítom", kilégzés: "hanem arra, ami értéket ad." },
+
+{ belégzés: "A türelem lehetőséget teremt a tisztánlátásra", kilégzés: "és segít bölcsebben válaszolni." },
+
+{ belégzés: "Megengedem, hogy ne legyen minden tökéletes", kilégzés: "és elfogadom az élet természetes változatosságát." },
+
+{ belégzés: "Ma jelen vagyok a saját döntéseimben", kilégzés: "és felelősen alakítom az irányomat." },
+
+{ belégzés: "A reggeli csendben meghallom a belső iránytűmet", kilégzés: "és figyelek arra, amit mutat." },
+
+{ belégzés: "Nem a sebesség határozza meg a haladásomat", kilégzés: "hanem az, hogy mennyire vagyok jelen közben." },
+
+{ belégzés: "Ma helyet hagyok a váratlan jó dolgoknak", kilégzés: "és nem zárom be magam az előre elképzelt tervekbe." },
+
+{ belégzés: "A saját figyelmemmel formálom a napomat", kilégzés: "és tudatosan választom meg a hozzáállásomat." },
+
+{ belégzés: "Értékelem a testem támogatását", kilégzés: "és gondoskodással fordulok felé." },
+
+{ belégzés: "Ma nem csak végigmegyek a napon", kilégzés: "hanem valóban részt veszek benne." },
+
+{ belégzés: "A nyitottság közelebb visz az új lehetőségekhez", kilégzés: "és kíváncsiságot ébreszt bennem." },
+
+{ belégzés: "Megtanulok együtt lenni a pillanattal", kilégzés: "és nem akarom mindig máshol megtalálni a nyugalmat." },
+
+{ belégzés: "Ma figyelmesebb kapcsolatot teremtek önmagammal", kilégzés: "és ebből a kapcsolódásból indulok tovább." },
+
+{ belégzés: "A nap első gondolatai irányt mutathatnak", kilégzés: "és én tudatosan választom meg őket." },
+
+{ belégzés: "Békével fogadom ezt az új napot", kilégzés: "és nyitottan találkozom mindazzal, amit hoz." },
+
+{ belégzés: "Ma lehetőséget adok magamnak a nyugodt kezdésre", kilégzés: "és nem viszem tovább a tegnap terheit." },
+
+{ belégzés: "Éberen figyelem, hogyan indul a napom", kilégzés: "és tudatosan választom meg a belső hangomat." },
+
+{ belégzés: "A reggeli csend segít kapcsolódni önmagamhoz", kilégzés: "és tisztábban látom, mire van szükségem." },
+
+{ belégzés: "Ma nyitottan fogadom a lehetőségeket", kilégzés: "és bizalommal lépek az ismeretlen felé." },
+
+{ belégzés: "Érzem a jelen pillanat egyszerűségét", kilégzés: "és nem keresek mindig többet a mostnál." },
+
+{ belégzés: "Tudatosan választom meg a figyelmem irányát", kilégzés: "és arra helyezem, ami valóban fontos." },
+
+{ belégzés: "A mai nap új tapasztalatokat hozhat", kilégzés: "és kíváncsian találkozom velük." },
+
+{ belégzés: "Megengedem magamnak a nyugodt haladást", kilégzés: "és nem sürgetem a saját utamat." },
+
+{ belégzés: "Figyelek arra, milyen energiát viszek magammal", kilégzés: "és békésebb jelenlétet választok." },
+
+{ belégzés: "Ma értékelem a kis pillanatokat", kilégzés: "és észreveszem bennük az örömöt." },
+
+{ belégzés: "A belső figyelem irányt ad nekem", kilégzés: "és segít tisztábban dönteni." },
+
+{ belégzés: "Nem kell mindent egyszerre megoldanom", kilégzés: "és egy lépéssel is közelebb kerülhetek." },
+
+{ belégzés: "Ma teret adok a nyugodt gondolatoknak", kilégzés: "és elengedem a felesleges aggodalmakat." },
+
+{ belégzés: "Elfogadom a nap változó ritmusát", kilégzés: "és alkalmazkodom hozzá bölcsen." },
+
+{ belégzés: "A figyelmemmel békésebbé tehetem a pillanatot", kilégzés: "és ezt a lehetőséget ma is választom." },
+
+{ belégzés: "Ma türelmesebben fordulok magamhoz", kilégzés: "és teret engedek a fejlődésemnek." },
+
+{ belégzés: "Észreveszem a testem ébredését", kilégzés: "és hálával kapcsolódom hozzá." },
+
+{ belégzés: "A mai nap nem teljesítményverseny", kilégzés: "hanem lehetőség a tudatos jelenlétre." },
+
+{ belégzés: "Bízom abban, hogy megtalálom a következő lépést", kilégzés: "és nem kell előre látnom mindent." },
+
+{ belégzés: "Ma figyelmesebben válaszolok a helyzetekre", kilégzés: "és kevesebbet reagálok megszokásból." },
+
+{ belégzés: "A reggel új energiát hoz számomra", kilégzés: "és friss szemmel tekintek a napra." },
+
+{ belégzés: "Megengedem magamnak az öröm befogadását", kilégzés: "és nem keresek mindig újabb feladatot." },
+
+{ belégzés: "Ma közelebb maradok ahhoz, aki valóban vagyok", kilégzés: "és nem akarok másnak látszani." },
+
+{ belégzés: "A csendben felismerhetem a belső válaszaimat", kilégzés: "és figyelmesen meghallgatom őket." },
+
+{ belégzés: "Ma békésebben tekintek a kihívásokra", kilégzés: "és lehetőséget látok bennük." },
+
+{ belégzés: "Értékelem azt, amit már elértem", kilégzés: "és örömmel folytatom az utamat." },
+
+{ belégzés: "A jelen pillanat elegendő kiindulópont", kilégzés: "és innen tudok továbbhaladni." },
+
+{ belégzés: "Ma figyelmet adok annak, ami feltölt", kilégzés: "és kevesebb energiát adok annak, ami kimerít." },
+
+{ belégzés: "Megfigyelem a belső állapotomat ítélet nélkül", kilégzés: "és elfogadással fordulok felé." },
+
+{ belégzés: "A mai nap során is megtalálhatom az egyensúlyt", kilégzés: "és figyelek a saját szükségleteimre." },
+
+{ belégzés: "Ma tudatosan alakítom a szokásaimat", kilégzés: "és apró lépésekkel haladok előre." },
+
+{ belégzés: "Nem kell minden pillanatot kontrollálnom", kilégzés: "és megtapasztalhatom a bizalom könnyedségét." },
+
+{ belégzés: "A figyelmes jelenlét közelebb visz önmagamhoz", kilégzés: "és mélyebb kapcsolatot teremt bennem." },
+
+{ belégzés: "Ma lehetőségem van másképp reagálni", kilégzés: "és új választásokat teremteni." },
+
+{ belégzés: "A türelem segít meghallani a valódi szükségleteimet", kilégzés: "és jobban gondoskodni magamról." },
+
+{ belégzés: "Ma nyitottan fordulok az emberek felé", kilégzés: "és figyelmes kapcsolódást teremtek." },
+
+{ belégzés: "A reggel emlékeztet arra, hogy újra kezdhetek", kilégzés: "és szabadon alakíthatom a napomat." },
+
+{ belégzés: "Megengedem, hogy a dolgok a saját idejükben érkezzenek", kilégzés: "és nem sürgetem a folyamatokat." },
+
+{ belégzés: "Ma a figyelmemet a jelenre helyezem", kilégzés: "és nem vesztem el a felesleges gondolatokban." },
+
+{ belégzés: "Érzem a lehetőséget ebben a napban", kilégzés: "és kíváncsian fedezem fel." },
+
+{ belégzés: "A belső nyugalommal indulok útnak", kilégzés: "és ezt az érzést magammal viszem." },
+
+{ belégzés: "Ma tudatosabban választom meg a reakcióimat", kilégzés: "és több békét teremtek magamban." },
+
+{ belégzés: "Elfogadom, ahol most tartok", kilégzés: "és bizalommal haladok tovább." },
+
+{ belégzés: "A mai nap új találkozás lehet önmagammal", kilégzés: "és lehetőség a mélyebb megértésre." },
+
+{ belégzés: "Figyelek arra, ami valódi értéket ad", kilégzés: "és elengedem a felesleges terheket." },
+
+{ belégzés: "Ma egyszerűbben és tisztábban szeretnék jelen lenni", kilégzés: "és helyet adok annak, ami fontos." },
+
+{ belégzés: "A nyugodt kezdet megalapozza a napomat", kilégzés: "és figyelemmel indulok tovább." },
+
+{ belégzés: "Befogadom ezt az új reggelt", kilégzés: "és hálával fordulok a lehetőségei felé." },
+
+{ belégzés: "Ma jelen vagyok a saját életemben", kilégzés: "és tudatosan alakítom a pillanataimat." },
+
+
+
+
+
+//201-300
+{ belégzés: "Új figyelemmel tekintek erre a reggelre", kilégzés: "és nyitottan fogadom, amit a nap hoz." },
+
+{ belégzés: "Megérzem magamban az újrakezdés lehetőségét", kilégzés: "és elindulok a saját ritmusomban." },
+
+{ belégzés: "Ma teret engedek a tiszta gondolatoknak", kilégzés: "és könnyebben választom meg a következő lépést." },
+
+{ belégzés: "Figyelmemmel kapcsolódok ehhez a pillanathoz", kilégzés: "és nem veszítem el magam a rohanásban." },
+
+{ belégzés: "A reggel csendje erőt ad nekem", kilégzés: "és nyugodtabban találkozom a nap feladataival." },
+
+{ belégzés: "Ma észreveszem a lehetőségeket magam körül", kilégzés: "és kíváncsian fordulok feléjük." },
+
+{ belégzés: "Elfogadom a mai nap egyediségét", kilégzés: "és nem hasonlítom más napokhoz." },
+
+{ belégzés: "Belső figyelemmel kezdem az utamat", kilégzés: "és tudatosabban kapcsolódom önmagamhoz." },
+
+{ belégzés: "Megengedem, hogy a reggel lassan bontakozzon ki", kilégzés: "és nem siettetem az első pillanatokat." },
+
+{ belégzés: "Ma figyelek arra, ami örömet ad", kilégzés: "és helyet készítek neki a napomban." },
+
+{ belégzés: "Érzem a bennem lévő lehetőségeket", kilégzés: "és bizalommal indulok feléjük." },
+
+{ belégzés: "A jelen pillanatból építem a napomat", kilégzés: "és nem a múlt vagy a jövő irányít." },
+
+{ belégzés: "Ma tisztábban szeretném látni a helyzeteket", kilégzés: "és kevesebb előítélettel figyelek." },
+
+{ belégzés: "Nyitott maradok az új felismerésekre", kilégzés: "és engedem, hogy tanítsanak." },
+
+{ belégzés: "A belső egyensúlyom ma is ápolható", kilégzés: "és figyelmet adok annak, ami megtart." },
+
+{ belégzés: "Ma nem a tökéletes pillanatot keresem", kilégzés: "hanem értékelem azt, ami most van." },
+
+{ belégzés: "Észreveszem a reggel apró szépségeit", kilégzés: "és engedem, hogy feltöltsenek." },
+
+{ belégzés: "A mai napban új tapasztalatok várnak", kilégzés: "és nyitottsággal találkozom velük." },
+
+{ belégzés: "Figyelek a belső jelzéseimre", kilégzés: "és tiszteletben tartom, amit üzennek." },
+
+{ belégzés: "Ma több tudatosságot viszek a cselekedeteimbe", kilégzés: "és kevesebb automatikusságot a döntéseimbe." },
+
+{ belégzés: "Megőrzöm a reggeli nyugalom érzését", kilégzés: "és magammal viszem a nap során." },
+
+{ belégzés: "Elfogadom, hogy minden nap fejlődési lehetőség", kilégzés: "és türelmesen haladok előre." },
+
+{ belégzés: "Ma figyelemmel fordulok a környezetem felé", kilégzés: "és meglátom azt, ami eddig elkerülte a figyelmem." },
+
+{ belégzés: "A csendes pillanatokban erőt találok", kilégzés: "és ebből az erőből indulok tovább." },
+
+{ belégzés: "Nem kell minden gondolatot követnem", kilégzés: "és szabadon választhatom meg a fókuszomat." },
+
+{ belégzés: "Ma kedvességgel fordulok önmagam felé", kilégzés: "és támogató kapcsolatot építek magammal." },
+
+{ belégzés: "A reggel emlékeztet arra, hogy van választásom", kilégzés: "és tudatosan alakítom a hozzáállásomat." },
+
+{ belégzés: "Megengedem magamnak a nyugodt jelenlétet", kilégzés: "és nem kell állandóan teljesítenem." },
+
+{ belégzés: "Ma értéket keresek a hétköznapi pillanatokban", kilégzés: "és közelebb kerülök a hálához." },
+
+{ belégzés: "Figyelmemmel rendet teremtek magamban", kilégzés: "és tisztábban indulok neki a napnak." },
+
+{ belégzés: "Bízom abban, hogy képes vagyok alkalmazkodni", kilégzés: "és nem félek az új helyzetektől." },
+
+{ belégzés: "Ma lehetőséget adok a kreatív gondolatoknak", kilégzés: "és szabadabban fedezem fel a megoldásokat." },
+
+{ belégzés: "A jelen pillanat az egyetlen hely, ahol cselekedhetek", kilégzés: "és ezért figyelemmel maradok benne." },
+
+{ belégzés: "Érzem a kapcsolatot önmagammal", kilégzés: "és ebből a kapcsolódásból indulok a világ felé." },
+
+{ belégzés: "Ma türelmet gyakorlok a folyamatokkal", kilégzés: "és nem akarom siettetni a fejlődést." },
+
+{ belégzés: "A figyelmes reggel megalapozza a napomat", kilégzés: "és tudatosabbá teszi a döntéseimet." },
+
+{ belégzés: "Megtanulom értékelni a kis változásokat", kilégzés: "és felismerem bennük a haladást." },
+
+{ belégzés: "Ma kevesebb ellenállással találkozom a történésekkel", kilégzés: "és több elfogadást viszek a pillanatokba." },
+
+{ belégzés: "Nyugodt szándékkal kezdem ezt a napot", kilégzés: "és figyelemmel haladok végig rajta." },
+
+{ belégzés: "A reggeli figyelem segít meghallani önmagamat", kilégzés: "és közelebb visz a belső egyensúlyhoz." },
+
+{ belégzés: "Ma helyet adok a jó érzéseknek", kilégzés: "és nem zárom el magam az örömtől." },
+
+{ belégzés: "Elfogadom, hogy a változás az élet része", kilégzés: "és nyitottan tanulok belőle." },
+
+{ belégzés: "Figyelmesebben választom meg a szavaimat", kilégzés: "és békésebb kapcsolatokat teremtek." },
+
+{ belégzés: "A mai nap lehetőség arra, hogy közelebb kerüljek önmagamhoz", kilégzés: "és ezt a lehetőséget elfogadom." },
+
+{ belégzés: "Ma jelenléttel töltöm meg a pillanatokat", kilégzés: "és nem csak áthaladok rajtuk." },
+
+{ belégzés: "Értékelem az élet egyszerű ajándékait", kilégzés: "és nyitott szívvel fogadom őket." },
+
+{ belégzés: "Békés szándékkal indulok el", kilégzés: "és figyelemmel kísérem a napomat." },
+
+{ belégzés: "A reggel új lehetőséget kínál", kilégzés: "és én tudatosan választom a jelenlétet." },
+
+{ belégzés: "Ma figyelemmel érkezem meg a saját napomba", kilégzés: "és tudatosan választom meg a jelenlétem minőségét." },
+
+{ belégzés: "A reggel lehetőséget ad a tiszta indulásra", kilégzés: "és elengedem, ami már nem tartozik hozzám." },
+
+{ belégzés: "Észreveszem a pillanat nyugodt erejét", kilégzés: "és ebből merítek a nap folyamán." },
+
+{ belégzés: "Ma kíváncsian fordulok a tapasztalataim felé", kilégzés: "és tanulok abból, ami érkezik." },
+
+{ belégzés: "Megengedem, hogy a nap a maga rendjében alakuljon", kilégzés: "és nem akarok mindent előre meghatározni." },
+
+{ belégzés: "A figyelmem ma értékes erőforrás", kilégzés: "és tudatosan választom meg, mire fordítom." },
+
+{ belégzés: "Nyugodt alapokkal kezdem ezt a reggelt", kilégzés: "és stabilabban találkozom a kihívásokkal." },
+
+{ belégzés: "Ma felismerem a lehetőséget a hétköznapi pillanatokban", kilégzés: "és nem várom mindig a különleges alkalmakat." },
+
+{ belégzés: "Kapcsolatot teremtek önmagammal ezen a reggelen", kilégzés: "és figyelmesebben haladok tovább." },
+
+{ belégzés: "A mai nap nem ismételhető meg", kilégzés: "és ezért értékelem minden pillanatát." },
+
+{ belégzés: "Ma teret adok a nyugodt gondolkodásnak", kilégzés: "és nem engedem, hogy a kapkodás vezessen." },
+
+{ belégzés: "Érzékelem a körülöttem lévő világot", kilégzés: "és kapcsolódom hozzá teljesebb figyelemmel." },
+
+{ belégzés: "A belső iránytűm segít eligazodni", kilégzés: "és hallgatok arra, ami valóban fontos." },
+
+{ belégzés: "Ma elfogadom a saját tempómat", kilégzés: "és nem sürgetem a kibontakozásomat." },
+
+{ belégzés: "A reggeli percek emlékeztetnek a tudatosságra", kilégzés: "és ezt a figyelmet magammal viszem." },
+
+{ belégzés: "Megfigyelem, milyen gondolatokkal indulok", kilégzés: "és olyanokat választok, amelyek támogatnak." },
+
+{ belégzés: "Ma nyitottan találkozom a változásokkal", kilégzés: "és meglátom bennük a fejlődés lehetőségét." },
+
+{ belégzés: "Értékelem a saját erőfeszítéseimet", kilégzés: "és nem csak az eredményeket veszem észre." },
+
+{ belégzés: "A nyugodt figyelem tisztább utat mutat", kilégzés: "és segít bölcsebben haladni." },
+
+{ belégzés: "Ma jelen maradok a döntéseimben", kilégzés: "és felelősen alakítom a következő lépéseimet." },
+
+{ belégzés: "Megengedem magamnak a lassabb pillanatokat", kilégzés: "és felismerem bennük az értéket." },
+
+{ belégzés: "A reggel friss energiát hoz", kilégzés: "és új szemmel tekintek a lehetőségekre." },
+
+{ belégzés: "Ma figyelek arra, ami valóban feltölt", kilégzés: "és tudatosan közelebb engedem magamhoz." },
+
+{ belégzés: "Elfogadom a mai nap minden részét", kilégzés: "és nem csak a könnyű pillanatokat keresem." },
+
+{ belégzés: "A kíváncsiság segít felfedezni az újat", kilégzés: "és nyitottan figyelem a tapasztalataimat." },
+
+{ belégzés: "Ma kevesebb terhet viszek magammal", kilégzés: "és csak azt tartom meg, ami fontos." },
+
+{ belégzés: "A belső csendből tisztább válaszok születnek", kilégzés: "és időt adok magamnak a felismerésekhez." },
+
+{ belégzés: "Ma tudatosabban kapcsolódom másokhoz", kilégzés: "és valódi figyelemmel fordulok feléjük." },
+
+{ belégzés: "Észreveszem a testem ébredő energiáját", kilégzés: "és megbecsüléssel gondoskodom róla." },
+
+{ belégzés: "A mai napban benne rejlik a fejlődés lehetősége", kilégzés: "és nyitottan fogadom a tanításait." },
+
+{ belégzés: "Ma békésebb kapcsolatot építek önmagammal", kilégzés: "és elfogadással fordulok saját utam felé." },
+
+{ belégzés: "Nem kell minden pillanatot megértenem azonnal", kilégzés: "és hagyom, hogy idővel tisztuljon a kép." },
+
+{ belégzés: "A figyelmem segítségével rendezettebbé válhat a napom", kilégzés: "és tudatosabban haladok a feladataimmal." },
+
+{ belégzés: "Ma teret hagyok az inspirációnak", kilégzés: "és befogadom az új ötleteket." },
+
+{ belégzés: "Értékelem a jelen egyszerűségét", kilégzés: "és nem keresem állandóan a következő pillanatot." },
+
+{ belégzés: "A reggeli nyugalom elkísérhet egész nap", kilégzés: "és emlékeztet arra, hogy visszatérhetek önmagamhoz." },
+
+{ belégzés: "Ma figyelmesebben választom meg a prioritásaimat", kilégzés: "és energiát adok annak, ami számít." },
+
+{ belégzés: "Megengedem, hogy a nap meglepetéseket hozzon", kilégzés: "és rugalmasan fogadom őket." },
+
+{ belégzés: "A belső stabilitásom segít a külső változások között", kilégzés: "és megtart a bizonytalan helyzetekben." },
+
+{ belégzés: "Ma értéket teremtek a jelenlétemmel", kilégzés: "és figyelmet viszek minden találkozásba." },
+
+{ belégzés: "A reggel alkalom arra, hogy újra kapcsolódjak magamhoz", kilégzés: "és tisztább szándékkal induljak tovább." },
+
+{ belégzés: "Ma türelmesebb leszek a folyamatokkal", kilégzés: "és hagyom, hogy a dolgok kibontakozzanak." },
+
+{ belégzés: "A figyelmes jelenlét segít meglátni a lényeget", kilégzés: "és elengedni a felesleges zajt." },
+
+{ belégzés: "Ma hálával tekintek arra, ami körülvesz", kilégzés: "és észreveszem az élet apró értékeit." },
+
+{ belégzés: "A saját utamat járom a saját ritmusomban", kilégzés: "és elfogadom annak minden állomását." },
+
+{ belégzés: "Ma nyitott szívvel indulok a nap felé", kilégzés: "és befogadom mindazt, amit taníthat." },
+
+{ belégzés: "A jelen pillanatban megtalálhatom a kapaszkodót", kilégzés: "és innen indulok tovább nyugodtan." },
+
+{ belégzés: "Ma tudatosan választom a békésebb hozzáállást", kilégzés: "és ezt a minőséget viszem magammal." },
+
+
+
+
+
+
+
+
+
+
+
+//301-400
+
+{ belégzés: "Ma lehetőséget adok magamnak a teljesebb jelenlétre", kilégzés: "és figyelmemmel megtöltöm ezt a napot." },
+
+{ belégzés: "A reggel új tér előttem", kilégzés: "és szabadon alakíthatom benne a szándékaimat." },
+
+{ belégzés: "Érzékelem a pillanat frissességét", kilégzés: "és nyitottan fogadom a mai tapasztalatokat." },
+
+{ belégzés: "Ma lassabban ítélek és mélyebben figyelek", kilégzés: "és több megértést teremtek magamban." },
+
+{ belégzés: "A figyelmemmel kapcsolatot teremtek a világgal", kilégzés: "és jelenlétemmel értéket adok a találkozásoknak." },
+
+{ belégzés: "Megengedem, hogy a mai nap tanítson engem", kilégzés: "és kíváncsian fogadom az új felismeréseket." },
+
+{ belégzés: "Ma nem csak a célokra figyelek", kilégzés: "hanem az útra is, amely hozzájuk vezet." },
+
+{ belégzés: "Észreveszem a bennem lévő nyugodt pontot", kilégzés: "és ebből indulok a nap felé." },
+
+{ belégzés: "A reggeli pillanatok értékes alapot adnak", kilégzés: "és tudatosan építek rájuk." },
+
+{ belégzés: "Ma figyelemmel választom meg a reakcióimat", kilégzés: "és nem hagyom, hogy a megszokás vezessen." },
+
+{ belégzés: "Elfogadom, hogy minden nap más lehet", kilégzés: "és rugalmasan alkalmazkodom hozzá." },
+
+{ belégzés: "A jelen pillanatban megtalálom a lehetőségeimet", kilégzés: "és innen teszem meg a következő lépést." },
+
+{ belégzés: "Ma több türelmet viszek a kapcsolataimba", kilégzés: "és több figyelmet adok a másik embernek." },
+
+{ belégzés: "Értékelem a reggel csendes üzenetét", kilégzés: "és magammal viszem a nyugalmát." },
+
+{ belégzés: "Ma helyet készítek a jó dolgok érkezésének", kilégzés: "és nem töltöm meg minden pillanatot várakozással." },
+
+{ belégzés: "A belső egyensúlyom figyelmet érdemel", kilégzés: "és ma gondoskodom róla." },
+
+{ belégzés: "Megfigyelem a gondolataimat kíváncsisággal", kilégzés: "és nem kell mindegyiket követnem." },
+
+{ belégzés: "Ma tisztább szándékkal indulok el", kilégzés: "és közelebb maradok ahhoz, ami fontos." },
+
+{ belégzés: "A változás új lehetőségeket hordozhat", kilégzés: "és nyitottsággal tekintek rá." },
+
+{ belégzés: "Ma figyelmet fordítok a belső egyensúlyomra", kilégzés: "és nem feledkezem meg önmagamról." },
+
+{ belégzés: "A reggel emlékeztet arra, hogy újra választhatok", kilégzés: "és tudatosan alakíthatom a hozzáállásomat." },
+
+{ belégzés: "Ma értékelem a kis előrelépéseket", kilégzés: "és örömmel veszem észre a haladást." },
+
+{ belégzés: "Megengedem, hogy a nap kibontsa a saját történetét", kilégzés: "és nem akarom minden részletét irányítani." },
+
+{ belégzés: "A nyugodt figyelem segít tisztábban gondolkodni", kilégzés: "és bölcsebb döntéseket hozni." },
+
+{ belégzés: "Ma közelebb maradok a saját értékeimhez", kilégzés: "és azok szerint cselekszem." },
+
+{ belégzés: "Észreveszem, mi ad energiát számomra", kilégzés: "és tudatosan helyet teremtek neki." },
+
+{ belégzés: "Ma békésebben fogadom a váratlan helyzeteket", kilégzés: "és keresem bennük a tanulás lehetőségét." },
+
+{ belégzés: "A figyelem hidat épít köztem és a világ között", kilégzés: "és nyitottabbá tesz a kapcsolódásra." },
+
+{ belégzés: "Ma tisztelettel fordulok a saját szükségleteim felé", kilégzés: "és meghallom, mire van igazán szükségem." },
+
+{ belégzés: "A jelen pillanat nem akadály, hanem kiindulópont", kilégzés: "és ebből teremtek új lehetőségeket." },
+
+{ belégzés: "Ma kevesebb zajt keresek magam körül", kilégzés: "és több helyet adok a belső tisztaságnak." },
+
+{ belégzés: "Érzem, hogy minden reggel új esélyt kínál", kilégzés: "és nyitottan fogadom ezt az ajándékot." },
+
+{ belégzés: "Ma tudatosan figyelek arra, mit építek magamban", kilégzés: "és milyen minőséget viszek tovább." },
+
+{ belégzés: "A türelem segít meglátni a dolgok valódi természetét", kilégzés: "és nem siettetem a felismeréseket." },
+
+{ belégzés: "Ma egyszerűbbé teszem, ami egyszerű lehet", kilégzés: "és elengedem a felesleges bonyolítást." },
+
+{ belégzés: "A reggeli figyelem megerősíti a kapcsolatomat önmagammal", kilégzés: "és nyugodtabban indulok tovább." },
+
+{ belégzés: "Ma több teret adok a hálának", kilégzés: "és észreveszem, miért lehetek köszönetnyilvánító." },
+
+{ belégzés: "A belső nyugalom nem tökéletes körülményekből születik", kilégzés: "hanem abból, ahogyan jelen vagyok." },
+
+{ belégzés: "Ma tudatosan választom a figyelmet a rohanás helyett", kilégzés: "és jelen maradok a pillanatokban." },
+
+{ belégzés: "Megengedem, hogy a mai nap meglepetéseket hozzon", kilégzés: "és kíváncsian találkozom velük." },
+
+{ belégzés: "Értékelem a saját fejlődésem apró jeleit", kilégzés: "és türelemmel kísérem az utamat." },
+
+{ belégzés: "Ma békés szándékkal fordulok önmagamhoz", kilégzés: "és ebből a békéből kapcsolódom másokhoz." },
+
+{ belégzés: "A reggel lehetőség a belső rendeződésre", kilégzés: "és figyelmet adok ennek a folyamatnak." },
+
+{ belégzés: "Ma nyitott szemmel és nyitott szívvel figyelek", kilégzés: "és befogadom a nap tapasztalatait." },
+
+{ belégzés: "A saját jelenlétem alakítja a pillanataimat", kilégzés: "és tudatosan választom meg ezt a jelenlétet." },
+
+{ belégzés: "Ma nem keresem mindenben a tökéletest", kilégzés: "és elfogadom az élet természetes változatosságát." },
+
+{ belégzés: "A nyugodt kezdés erőt ad a naphoz", kilégzés: "és ezt az erőt magammal viszem." },
+
+{ belégzés: "Ma figyelemmel és bizalommal indulok", kilégzés: "és teret adok annak, ami érkezik." },
+
+{ belégzés: "Ma figyelemmel ajándékozom meg önmagam", kilégzés: "és békésebben kapcsolódom a napomhoz." },
+
+{ belégzés: "A reggel csendjében megtalálom a saját ritmusomat", kilégzés: "és nem kell mások tempójához igazodnom." },
+
+{ belégzés: "Ma jelenléttel töltöm meg a döntéseimet", kilégzés: "és tudatosabban választom az irányomat." },
+
+{ belégzés: "Érzem a bennem születő friss energiát", kilégzés: "és nyitottan fordulok az új lehetőségek felé." },
+
+{ belégzés: "A mai nap egy új fejezet lehetősége", kilégzés: "és figyelemmel írom a saját történetemet." },
+
+{ belégzés: "Ma meghallom a csendes belső útmutatásomat", kilégzés: "és bizalommal követem, ami fontos." },
+
+{ belégzés: "Elfogadom a reggel egyszerű szépségét", kilégzés: "és engedem, hogy feltöltsön." },
+
+{ belégzés: "Ma nem csak végrehajtom a feladataimat", kilégzés: "hanem tudatosan jelen vagyok közben." },
+
+{ belégzés: "A figyelmem hidat teremt a pillanat és köztem", kilégzés: "és közelebb visz önmagamhoz." },
+
+{ belégzés: "Ma lehetőséget adok a nyugodt gondolatoknak", kilégzés: "és nem táplálom a felesleges aggodalmakat." },
+
+{ belégzés: "Értékelem azt, ahol most tartok", kilégzés: "és türelemmel tekintek arra, ahová haladok." },
+
+{ belégzés: "A reggel emlékeztet a megújulás erejére", kilégzés: "és friss szemlélettel indulok tovább." },
+
+{ belégzés: "Ma figyelek a szándékaim tisztaságára", kilégzés: "és ennek megfelelően cselekszem." },
+
+{ belégzés: "Megengedem magamnak az örömteli pillanatokat", kilégzés: "és nem keresek mindig újabb célokat." },
+
+{ belégzés: "A jelen pillanat elegendő alap a kezdéshez", kilégzés: "és innen építem fel a napomat." },
+
+{ belégzés: "Ma szeretetteljesebb figyelmet adok magamnak", kilégzés: "és elfogadással fordulok önmagam felé." },
+
+{ belégzés: "Észreveszem a körülöttem lévő apró csodákat", kilégzés: "és hálával fogadom őket." },
+
+{ belégzés: "A nyugodt jelenlét segít megtalálni az egyensúlyt", kilégzés: "és megtart a nap változásai között." },
+
+{ belégzés: "Ma nem a sietség határozza meg a tempómat", kilégzés: "hanem a tudatos választásaim." },
+
+{ belégzés: "Figyelemmel fordulok ahhoz, ami előttem áll", kilégzés: "és bizalommal lépek tovább." },
+
+{ belégzés: "A mai reggel lehetőség a kapcsolódásra", kilégzés: "és közelebb visz ahhoz, ami igazán számít." },
+
+{ belégzés: "Ma teret adok a nyugodt felismeréseknek", kilégzés: "és nem akarok minden választ azonnal." },
+
+{ belégzés: "Érzem a testem ébredő jelenlétét", kilégzés: "és tisztelettel figyelek rá." },
+
+{ belégzés: "A mai napban benne van a változás lehetősége", kilégzés: "és nyitottsággal találkozom vele." },
+
+{ belégzés: "Ma tudatosan választom meg a figyelmem irányát", kilégzés: "és energiát adok annak, ami épít." },
+
+{ belégzés: "A reggeli csend segít meghallani önmagamat", kilégzés: "és tisztábban látom a következő lépést." },
+
+{ belégzés: "Ma békével kezdem a kapcsolataimat", kilégzés: "és figyelmesebben fordulok másokhoz." },
+
+{ belégzés: "Értékelem a pillanat egyszerű jelenlétét", kilégzés: "és nem keresek mindig többet a mostnál." },
+
+{ belégzés: "Ma lehetőséget teremtek a fejlődésre", kilégzés: "és türelemmel haladok a saját utamon." },
+
+{ belégzés: "A belső figyelmem irányt mutat számomra", kilégzés: "és segít megtalálni a következő lépést." },
+
+{ belégzés: "Ma könnyedséget viszek a feladataimba", kilégzés: "és nem hordozok felesleges terheket." },
+
+{ belégzés: "A reggel friss kezdetet kínál", kilégzés: "és szabadon alakíthatom a hozzáállásomat." },
+
+{ belégzés: "Ma észreveszem, mi támogat engem", kilégzés: "és közelebb engedem magamhoz ezeket a dolgokat." },
+
+{ belégzés: "Megengedem, hogy a nap természetesen bontakozzon ki", kilégzés: "és rugalmasan alkalmazkodom hozzá." },
+
+{ belégzés: "A figyelmes jelenlét segít megtalálni a nyugalmat", kilégzés: "és ezt a nyugalmat továbbviszem." },
+
+{ belégzés: "Ma értéket teremtek az apró cselekedeteimmel", kilégzés: "és tudom, hogy minden lépés számít." },
+
+{ belégzés: "Érzem a lehetőséget ebben az új napban", kilégzés: "és kíváncsian indulok felé." },
+
+{ belégzés: "Ma több figyelmet adok annak, ami örömet hoz", kilégzés: "és kevesebb energiát annak, ami elvon." },
+
+{ belégzés: "A reggeli pillanatok megerősítenek", kilégzés: "és segítenek stabilan elindulni." },
+
+{ belégzés: "Ma elfogadom a változó körülményeket", kilégzés: "és megtalálom bennük a lehetőségeket." },
+
+{ belégzés: "A saját belső világomra is figyelmet fordítok", kilégzés: "és ápolom a kapcsolatot önmagammal." },
+
+{ belégzés: "Ma nyitott maradok az új tapasztalatokra", kilégzés: "és tanulok abból, amit az élet mutat." },
+
+{ belégzés: "A jelen pillanatban megtalálom a stabil alapot", kilégzés: "és innen indulok a nap feladatai felé." },
+
+{ belégzés: "Ma tudatosan teremtek békésebb pillanatokat", kilégzés: "és jelenlétemmel alakítom a környezetemet." },
+
+{ belégzés: "Értékelem a lehetőséget, hogy új nap kezdődik", kilégzés: "és hálával fogadom ezt a pillanatot." },
+
+{ belégzés: "Ma figyelemmel kísérem a saját utamat", kilégzés: "és elfogadom a fejlődés minden állomását." },
+
+{ belégzés: "A reggeli szándékom meghatározza a nap minőségét", kilégzés: "és tudatosan választom a békés jelenlétet." },
+
+{ belégzés: "Ma egyszerűséget és tisztaságot viszek magammal", kilégzés: "és nyugodtabban találkozom mindennel." },
+
+{ belégzés: "A nap első pillanatai lehetőséget adnak az újrakezdésre", kilégzés: "és bizalommal lépek bele ebbe a napba." }
+
 
 ];
 
