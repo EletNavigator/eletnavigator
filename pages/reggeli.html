@@ -55,19 +55,32 @@
     }
 
     .breath-circle {
-      width: 120px;
-      height: 120px;
-      margin: 20px auto 30px auto;
-      border-radius: 50%;
-      background: #d9c7f3;
-      animation: breathe 6s infinite ease-in-out;
-    }
+  display: block;
+  width: 220px;
+  height: 220px;
+  margin: 20px auto 30px auto;
+  object-fit: contain;
+  animation: breathe 8s ease-in-out infinite;
+  transform-origin: center center;
+  filter: drop-shadow(0 0 18px rgba(142, 91, 255, 0.35));
+}
 
     @keyframes breathe {
-      0%   { transform: scale(0.9); opacity: 0.5; }
-      50%  { transform: scale(1.25); opacity: 1; }
-      100% { transform: scale(0.9); opacity: 0.5; }
-    }
+  0% {
+    transform: scale(0.9);
+    opacity: 0.85;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(0.9);
+    opacity: 0.85;
+  }
+}
 
     #mantra {
       max-width: 600px;
@@ -134,7 +147,7 @@
     Ismételd meg 3×. Lélegezz lassan. Kövesd a ritmust.
   </div>
 
-  <div class="breath-circle"></div>
+  <img src="../mandala.png" alt="Lélegző mandala" class="breath-circle">
 
   <div id="mantra">Betöltés...</div>
 
