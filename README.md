@@ -1,3 +1,4 @@
+
 # ÉletNavigátor
 
 **ÉletNavigátor** is a simple and privacy-focused web application designed to support self-reflection, conscious living, and personal growth.
