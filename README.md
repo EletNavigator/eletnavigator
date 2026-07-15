@@ -41,9 +41,6 @@ Feel free to open an Issue or submit a Pull Request.
 
 ## License
 All rights reserved.
-
-The source code is publicly available for transparency and learning purposes.
-Reuse, redistribution or commercial use is not permitted without prior written permission.
 ---
 
 **Less noise. More awareness.**
