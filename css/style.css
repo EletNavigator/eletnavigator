@@ -207,3 +207,10 @@ img.header-icon {
     line-height: 1.6;
     margin-bottom: 10px;
 }
+
+.home-info {
+    margin: 8px 0 18px;
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
